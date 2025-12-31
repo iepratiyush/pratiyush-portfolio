@@ -16,11 +16,10 @@ export default function AboutPage() {
         subtitle={aboutData.title}
         className="pt-24"
       >
-        <div className="mx-auto max-w-5xl">
-          <div className="mb-12 flex flex-col items-center gap-8 md:flex-row md:gap-12">
-            <div className="group relative flex-shrink-0">
-              <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-primary via-accent to-accent-alt opacity-50 blur-2xl transition-all duration-500 group-hover:opacity-75"></div>
-              <div className="relative h-64 w-64 overflow-hidden rounded-3xl border-4 border-primary/20 shadow-2xl shadow-primary/20 transition-all duration-500 group-hover:border-primary/40 group-hover:scale-105 md:h-80 md:w-80">
+        <div className="mx-auto max-w-4xl">
+          <div className="mb-12 flex flex-col items-start gap-8 md:flex-row md:gap-12">
+            <div className="flex-shrink-0">
+              <div className="relative h-48 w-48 overflow-hidden rounded-lg md:h-56 md:w-56">
                 <Image
                   src="/profile.JPG"
                   alt="Profile"
@@ -30,59 +29,67 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="flex-1 text-center md:text-left">
-              <h3 className="mb-4 text-3xl font-black text-primary md:text-4xl">
+            <div className="flex-1">
+              <h3 className="mb-4 text-2xl font-bold text-foreground md:text-3xl">
                 {aboutData.name}
               </h3>
-              <div className="mb-6 space-y-3">
+              <div className="mb-6 space-y-2">
                 {aboutData.location && (
-                  <p className="flex items-center justify-center gap-2 text-lg text-muted md:justify-start">
-                    <span className="text-xl">📍</span>
-                    <span>{aboutData.location}</span>
+                  <p className="text-base text-muted">
+                    {aboutData.location}
                   </p>
                 )}
                 {aboutData.email && (
                   <a
                     href={`mailto:${aboutData.email}`}
-                    className="flex items-center justify-center gap-2 text-lg text-muted transition-colors hover:text-accent md:justify-start"
+                    className="block text-base text-muted transition-colors hover:text-foreground"
                   >
-                    <span className="text-xl">✉️</span>
-                    <span>{aboutData.email}</span>
+                    {aboutData.email}
                   </a>
                 )}
               </div>
             </div>
           </div>
 
-          <div className="group relative mb-12 overflow-hidden rounded-3xl border border-card-border bg-card-bg/50 p-8 backdrop-blur-sm transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 md:p-12">
-            <div className="absolute -right-12 -top-12 h-48 w-48 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 blur-3xl transition-all duration-500 group-hover:scale-150 group-hover:opacity-30"></div>
-            <div className="relative z-10">
-              <h4 className="mb-6 text-2xl font-black text-foreground">My Story</h4>
-              <p className="text-lg leading-relaxed text-muted">
-                {aboutData.bio}
-              </p>
+          <div className="mb-12 border border-border bg-card-bg p-8">
+            <h4 className="mb-4 text-xl font-semibold text-foreground">About</h4>
+            <div className="space-y-4 text-base leading-relaxed text-muted">
+              {aboutData.longBio.split('\n\n').map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ))}
             </div>
           </div>
 
-          <div className="text-center">
-            <h4 className="mb-8 text-2xl font-black text-foreground">
-              Let's Connect
+          <div>
+            <h4 className="mb-6 text-xl font-semibold text-foreground">
+              Connect
             </h4>
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-wrap gap-3">
               {aboutData.socialLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative"
+                  className="flex items-center gap-2 rounded border border-border bg-card-bg px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
+                  title={link.name}
                 >
-                  <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-primary to-accent opacity-0 blur transition-all group-hover:opacity-20"></div>
-                  <div className="relative flex items-center gap-3 rounded-2xl border-2 border-border bg-card-bg/50 px-6 py-3 backdrop-blur-sm transition-all group-hover:border-primary group-hover:scale-105">
-                    <span className="text-lg font-bold text-muted transition-colors group-hover:text-primary">
-                      {link.name}
-                    </span>
-                  </div>
+                  {link.icon === 'github' && (
+                    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
+                    </svg>
+                  )}
+                  {link.icon === 'linkedin' && (
+                    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                  )}
+                  {link.icon === 'medium' && (
+                    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
+                    </svg>
+                  )}
+                  <span>{link.name}</span>
                 </a>
               ))}
             </div>

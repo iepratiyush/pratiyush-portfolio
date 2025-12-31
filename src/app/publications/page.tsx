@@ -17,22 +17,14 @@ export default function PublicationsPage() {
         subtitle="My published work and recognitions"
         className="pt-24"
       >
-        <div className="mx-auto max-w-3xl space-y-6">
+        <div className="mx-auto max-w-3xl space-y-4">
           {publicationsData.map((pub) => (
             <div
               key={pub.id}
-              className="rounded-lg border border-card-border bg-card-bg p-6 shadow-sm transition-all hover:shadow-md hover:border-accent/50"
+              className="border border-border bg-card-bg p-6 transition-colors hover:border-foreground/20"
             >
               <div className="mb-3 flex flex-wrap items-center gap-3">
-                <Badge
-                  variant={
-                    pub.type === 'award'
-                      ? 'warning'
-                      : pub.type === 'paper'
-                        ? 'primary'
-                        : 'default'
-                  }
-                >
+                <Badge>
                   {pub.type}
                 </Badge>
                 <span className="text-sm text-muted">
@@ -43,16 +35,19 @@ export default function PublicationsPage() {
                 </span>
               </div>
 
-              <h3 className="mb-3 text-xl font-bold text-foreground">
+              <h3 className="mb-3 text-lg font-semibold text-foreground">
                 {pub.title}
               </h3>
-              <p className="mb-4 text-muted">{pub.description}</p>
+              <p className="mb-4 text-sm text-muted">{pub.description}</p>
 
               {pub.url && (
-                <a href={pub.url} target="_blank" rel="noopener noreferrer">
-                  <Button variant="outline" size="sm">
-                    View Publication
-                  </Button>
+                <a
+                  href={pub.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-muted transition-colors hover:text-foreground"
+                >
+                  View Publication →
                 </a>
               )}
             </div>

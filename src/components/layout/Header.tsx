@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { useState } from 'react';
 import ThemeToggle from '@/components/ui/ThemeToggle';
 
@@ -21,28 +20,32 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/80 shadow-sm backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-sm">
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link
             href="/"
-            className="flex items-center gap-3 transition-all hover:scale-105"
+            className="text-xl font-semibold text-foreground transition-colors hover:text-primary"
           >
-            <div className="relative h-10 w-10 overflow-hidden rounded-full border-2 border-primary/30 shadow-md shadow-primary/20">
-              <Image
-                src="/profile.JPG"
-                alt="Profile"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <span className="text-2xl font-black text-primary">
-              Pratiyush
-            </span>
+            Pratiyush
           </Link>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-6">
+            <ul className="hidden space-x-6 md:flex">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm font-medium text-muted transition-colors hover:text-foreground"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
             <ThemeToggle />
+
             <button
               className="text-foreground md:hidden"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -64,19 +67,6 @@ export default function Header() {
                 )}
               </svg>
             </button>
-
-            <ul className="hidden space-x-8 md:flex">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="relative text-sm font-medium text-muted transition-colors hover:text-primary after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-gradient-to-r after:from-primary after:to-accent after:transition-all hover:after:w-full"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
 
@@ -86,7 +76,7 @@ export default function Header() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="block py-2 text-muted transition-colors hover:text-accent"
+                  className="block py-2 text-muted transition-colors hover:text-foreground"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.label}

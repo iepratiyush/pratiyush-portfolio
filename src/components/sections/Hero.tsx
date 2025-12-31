@@ -1,113 +1,84 @@
 import { aboutData } from '@/data/about';
 import Button from '@/components/ui/Button';
-import FloatingOrbs from '@/components/ui/FloatingOrbs';
 import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen overflow-hidden">
-      <FloatingOrbs />
-
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-accent/10"></div>
-
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
-
-      <div className="container relative z-10 mx-auto flex min-h-screen items-center px-4">
+    <section className="relative min-h-screen">
+      <div className="container mx-auto flex min-h-screen items-center px-4 py-20">
         <div className="w-full">
-          <div className="mx-auto flex max-w-6xl flex-col items-center gap-12 lg:flex-row lg:gap-16">
+          <div className="mx-auto flex max-w-5xl flex-col items-start gap-16 lg:flex-row lg:items-center">
             <div className="flex-shrink-0">
-              <div className="group relative">
-                <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-primary via-accent to-accent-alt opacity-75 blur-2xl transition-all duration-500 group-hover:opacity-100 group-hover:blur-3xl"></div>
-                <div className="relative h-48 w-48 overflow-hidden rounded-full border-4 border-primary/20 shadow-2xl shadow-primary/30 transition-all duration-500 group-hover:border-primary/40 group-hover:scale-105 md:h-64 md:w-64 lg:h-80 lg:w-80">
-                  <Image
-                    src="/profile.JPG"
-                    alt="Profile"
-                    fill
-                    className="object-cover"
-                    priority
-                  />
-                </div>
+              <div className="relative h-56 w-56 overflow-hidden rounded-lg">
+                <Image
+                  src="/profile.JPG"
+                  alt="Profile"
+                  fill
+                  className="object-cover"
+                  priority
+                />
               </div>
             </div>
 
-            <div className="flex-1 text-center lg:text-left">
-            <div className="mb-8 inline-flex animate-fade-in items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-5 py-2.5 text-sm font-semibold text-primary backdrop-blur-sm">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-primary"></span>
-              </span>
-              Available for opportunities
-            </div>
-
-            <h1 className="mb-8 text-5xl font-black leading-none tracking-tight sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl">
-              <span className="block bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                Hi, I'm
-              </span>
-              <span className="block text-primary">
+            <div className="flex-1">
+              <h1 className="mb-4 text-5xl font-bold tracking-tight text-foreground md:text-6xl">
                 {aboutData.name}
-              </span>
-            </h1>
+              </h1>
 
-            <p className="mb-6 text-2xl font-bold text-foreground sm:text-3xl md:text-4xl lg:text-5xl">
-              <span className="relative inline-block">
+              <p className="mb-6 text-xl text-muted md:text-2xl">
                 {aboutData.title}
-                <span className="absolute -bottom-2 left-0 h-1 w-full bg-gradient-to-r from-primary to-accent"></span>
-              </span>
-            </p>
+              </p>
 
-            <p className="mb-12 mx-auto max-w-3xl text-lg leading-relaxed text-muted sm:text-xl lg:mx-0 lg:text-2xl">
-              {aboutData.bio}
-            </p>
+              <p className="mb-8 max-w-2xl text-base leading-relaxed text-muted md:text-lg">
+                {aboutData.bio}
+              </p>
 
-            <div className="flex flex-wrap justify-center gap-4 lg:justify-start">
-              <a href="#projects">
-                <Button size="lg" className="group relative overflow-hidden">
-                  <span className="relative z-10 flex items-center gap-2">
-                    <span>View My Work</span>
-                    <span className="transition-transform group-hover:translate-x-1">
-                      →
-                    </span>
-                  </span>
-                </Button>
-              </a>
-              <a href="#contact">
-                <Button variant="outline" size="lg" className="group">
-                  <span className="flex items-center gap-2">
-                    <span>Let's Connect</span>
-                    <span className="text-xl">✨</span>
-                  </span>
-                </Button>
-              </a>
-            </div>
-
-            <div className="mt-16 flex flex-wrap items-center justify-center gap-6 lg:justify-start">
-              <span className="text-sm font-medium text-muted">
-                Connect with me
-              </span>
-              {aboutData.socialLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative"
-                  title={link.name}
-                >
-                  <div className="absolute -inset-2 rounded-full bg-gradient-to-r from-primary to-accent opacity-0 blur transition group-hover:opacity-20"></div>
-                  <div className="relative flex h-14 w-14 items-center justify-center rounded-full border-2 border-border bg-card-bg/50 backdrop-blur-sm transition-all group-hover:border-primary group-hover:scale-110">
-                    <span className="text-sm font-bold text-muted transition-colors group-hover:text-primary">
-                      {link.name.substring(0, 2).toUpperCase()}
-                    </span>
-                  </div>
+              <div className="mb-8 flex flex-wrap gap-4">
+                <a href="#projects">
+                  <Button size="lg">
+                    View My Work
+                  </Button>
                 </a>
-              ))}
-            </div>
+                <a href="#contact">
+                  <Button variant="outline" size="lg">
+                    Let's Connect
+                  </Button>
+                </a>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-3">
+                {aboutData.socialLinks.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 rounded border border-border bg-card-bg px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
+                    title={link.name}
+                  >
+                    {link.icon === 'github' && (
+                      <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
+                      </svg>
+                    )}
+                    {link.icon === 'linkedin' && (
+                      <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                      </svg>
+                    )}
+                    {link.icon === 'medium' && (
+                      <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
+                      </svg>
+                    )}
+                    <span>{link.name}</span>
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </div>
-
-      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-background via-background/80 to-transparent"></div>
     </section>
   );
 }

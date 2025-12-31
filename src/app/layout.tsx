@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import ScrollToTop from '@/components/ui/ScrollToTop';
 import { ThemeProvider } from '@/lib/theme';
 
 const geistSans = Geist({
@@ -18,35 +17,40 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Pratiyush | Portfolio',
-    template: '%s | Pratiyush',
+    default: 'Pratiyush Prakash | Portfolio',
+    template: '%s | Pratiyush Prakash',
   },
   description:
-    'Personal portfolio of Pratiyush - Software Engineer, showcasing projects, experience, articles, and recommendations.',
+    'Personal portfolio of Pratiyush Prakash - Software Engineer, showcasing projects, experience, articles, and recommendations.',
   keywords: [
-    'Pratiyush',
+    'Pratiyush Prakash',
     'Portfolio',
     'Software Engineer',
     'Web Developer',
     'Next.js',
   ],
-  authors: [{ name: 'Pratiyush' }],
-  creator: 'Pratiyush',
+  authors: [{ name: 'Pratiyush Prakash' }],
+  creator: 'Pratiyush Prakash',
   metadataBase: new URL('https://pratiyush.com'),
+  icons: {
+    icon: '/favicon.png',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://pratiyush.com',
-    title: 'Pratiyush | Portfolio',
+    title: 'Pratiyush Prakash | Portfolio',
     description:
-      'Personal portfolio of Pratiyush - Software Engineer, showcasing projects, experience, articles, and recommendations.',
-    siteName: 'Pratiyush Portfolio',
+      'Personal portfolio of Pratiyush Prakash - Software Engineer, showcasing projects, experience, articles, and recommendations.',
+    siteName: 'Pratiyush Prakash Portfolio',
+    images: ['/profile.JPG'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Pratiyush | Portfolio',
+    title: 'Pratiyush Prakash | Portfolio',
     description:
-      'Personal portfolio of Pratiyush - Software Engineer, showcasing projects, experience, articles, and recommendations.',
+      'Personal portfolio of Pratiyush Prakash - Software Engineer, showcasing projects, experience, articles, and recommendations.',
+    images: ['/profile.JPG'],
   },
   robots: {
     index: true,
@@ -75,7 +79,6 @@ export default function RootLayout({
           <Header />
           <main className="min-h-screen">{children}</main>
           <Footer />
-          <ScrollToTop />
         </ThemeProvider>
       </body>
     </html>

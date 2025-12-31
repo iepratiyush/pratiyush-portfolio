@@ -16,18 +16,18 @@ export default function SkillsPage() {
         subtitle="Technologies and tools I work with"
         className="pt-24"
       >
-        <div className="mx-auto max-w-4xl space-y-8">
+        <div className="mx-auto max-w-4xl space-y-6">
           {skillsData.map((skillCategory) => (
             <div
               key={skillCategory.category}
-              className="rounded-lg border border-card-border bg-card-bg p-6 shadow-sm"
+              className="border border-border bg-card-bg p-6"
             >
-              <h3 className="mb-4 text-2xl font-bold text-foreground">
+              <h3 className="mb-4 text-xl font-semibold text-foreground">
                 {skillCategory.category}
               </h3>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-2">
                 {skillCategory.items.map((skill) => (
-                  <Badge key={skill} variant="primary">
+                  <Badge key={skill}>
                     {skill}
                   </Badge>
                 ))}

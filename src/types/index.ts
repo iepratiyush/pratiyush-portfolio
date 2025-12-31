@@ -74,6 +74,7 @@ export interface AboutMe {
   name: string;
   title: string;
   bio: string;
+  longBio: string;
   email?: string;
   location?: string;
   socialLinks: SocialLink[];
