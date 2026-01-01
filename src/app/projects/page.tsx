@@ -30,7 +30,7 @@ export default function ProjectsPage() {
             {sortedProjects.map((project) => (
               <div
                 key={project.id}
-                className="group border border-border bg-card-bg p-6 transition-all hover:border-foreground/20 hover:shadow-sm"
+                className="group border border-border bg-card-bg p-4 transition-all duration-200 hover:-translate-y-1 hover:border-foreground/20 hover:shadow-md md:p-6"
               >
                 <div className="flex flex-col gap-4">
                   <div className="flex-1 space-y-3">
@@ -42,7 +42,7 @@ export default function ProjectsPage() {
                               href={project.link}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="inline-flex items-center gap-1.5 transition-colors hover:text-foreground/80"
+                              className="group inline-flex items-center gap-1.5 transition-colors hover:text-primary"
                             >
                               {project.title}
                               <ExternalLink className="h-4 w-4" />
@@ -63,7 +63,7 @@ export default function ProjectsPage() {
                             {project.organization}
                           </span>
                         </div>
-                        <p className="mb-4 text-sm leading-relaxed text-muted">
+                        <p className="mb-4 text-base leading-relaxed text-muted md:text-sm">
                           {project.description}
                         </p>
                         <div className="flex flex-wrap gap-2">

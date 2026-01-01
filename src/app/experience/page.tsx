@@ -22,7 +22,7 @@ export default function ExperiencePage() {
         subtitle="My professional journey"
         className="pt-24"
       >
-        <div className="mx-auto max-w-3xl">
+        <div className="mx-auto max-w-5xl">
           {sortedExperience.map((exp) => (
             <ExperienceCard key={exp.id} experience={exp} />
           ))}

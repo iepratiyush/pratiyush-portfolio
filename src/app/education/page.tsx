@@ -16,7 +16,7 @@ export default function EducationPage() {
         subtitle="Academic background and achievements"
         className="pt-24"
       >
-        <div className="mx-auto max-w-3xl">
+        <div className="mx-auto max-w-5xl">
           {educationData.map((edu) => (
             <EducationCard key={edu.id} education={edu} />
           ))}

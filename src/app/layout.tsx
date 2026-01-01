@@ -5,6 +5,8 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { ThemeProvider } from '@/lib/theme';
 import { getPersonSchema, getWebSiteSchema } from '@/lib/schema';
+import BackToTop from '@/components/ui/BackToTop';
+import ScrollProgress from '@/components/ui/ScrollProgress';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -96,9 +98,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} bg-background text-foreground antialiased transition-colors`}
       >
         <ThemeProvider>
+          <ScrollProgress />
           <Header />
           <main className="min-h-screen">{children}</main>
           <Footer />
+          <BackToTop />
         </ThemeProvider>
       </body>
     </html>

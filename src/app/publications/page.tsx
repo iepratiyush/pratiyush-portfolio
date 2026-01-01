@@ -25,7 +25,7 @@ export default function PublicationsPage() {
             {sortedPublications.map((pub) => (
               <div
                 key={pub.id}
-                className="group border border-border bg-card-bg p-4 transition-all hover:border-foreground/20 hover:shadow-sm md:p-6"
+                className="group border border-border bg-card-bg p-4 transition-all duration-200 hover:-translate-y-1 hover:border-foreground/20 hover:shadow-md md:p-6"
               >
                 <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
                   <div className="flex-1 space-y-3">

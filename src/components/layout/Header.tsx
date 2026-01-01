@@ -18,8 +18,6 @@ export default function Header() {
     { href: '/education', label: 'Education' },
     { href: '/publications', label: 'Publications' },
     { href: '/skills', label: 'Skills' },
-    { href: '/books', label: 'Books' },
-    { href: '/entertainment', label: 'Entertainment' },
   ];
 
   return (
@@ -81,7 +79,7 @@ export default function Header() {
         </div>
 
         {isMenuOpen && (
-          <ul className="mt-4 space-y-2 md:hidden">
+          <ul className="mt-4 max-h-[70vh] space-y-2 overflow-y-auto md:hidden">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (

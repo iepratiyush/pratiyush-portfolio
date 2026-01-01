@@ -18,12 +18,13 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="rounded-lg p-2 transition-colors hover:bg-gray-200 dark:hover:bg-gray-700"
+      className="group relative rounded-lg p-2 transition-all duration-200 hover:bg-secondary hover:scale-110"
       aria-label="Toggle theme"
+      title={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
     >
       {theme === 'light' ? (
         <svg
-          className="h-5 w-5 text-gray-700"
+          className="h-5 w-5 text-foreground transition-transform duration-300 group-hover:rotate-12"
           fill="none"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -35,7 +36,7 @@ export default function ThemeToggle() {
         </svg>
       ) : (
         <svg
-          className="h-5 w-5 text-gray-200"
+          className="h-5 w-5 text-foreground transition-transform duration-300 group-hover:rotate-45"
           fill="none"
           strokeLinecap="round"
           strokeLinejoin="round"

@@ -7,7 +7,8 @@ interface ExperienceCardProps {
 
 export default function ExperienceCard({ experience }: ExperienceCardProps) {
   return (
-    <div className="border-l-2 border-border pl-4 pb-6 md:pl-6 md:pb-8">
+    <div className="relative border-l-2 border-primary/30 pl-4 pb-6 md:pl-6 md:pb-8">
+      <div className="absolute -left-[9px] top-0 h-4 w-4 rounded-full border-2 border-primary bg-background" />
       <div className="mb-3 md:mb-4">
         <h3 className="text-base font-semibold text-foreground md:text-lg">
           {experience.position}

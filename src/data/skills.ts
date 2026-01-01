@@ -4,10 +4,12 @@ export const skillsData: Skill[] = [
   {
     category: 'AI/ML & Data',
     items: ['Supervised Learning', 'Unsupervised Learning', 'Gen AI', 'Agentic AI', 'LLMs', 'Transformer Models', 'RAG', 'Prompt Engineering', 'Recommendation Systems', 'MLOps', 'Feature Engineering', 'ETL', 'Data Modeling'],
+    currentFocus: true,
   },
   {
     category: 'Architecture & Design',
     items: ['System Design', 'Microservices', 'Distributed Systems', 'REST API', 'Event-Driven Architecture', 'API Gateway', 'API Design', 'Load Balancing'],
+    currentFocus: true,
   },
   {
     category: 'Leadership & Soft Skills',

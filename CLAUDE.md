@@ -12,29 +12,7 @@ Sorting is implemented in the page components:
 - `src/app/articles/page.tsx` - Sorts by `publishedDate` field (YYYY-MM-DD format)
 - `src/app/entertainment/page.tsx` - Sorts by `year` field (YYYY format)
 
-**Why sort at display time?**
-- Ensures data is ALWAYS displayed in the correct order regardless of data file order
-- Makes it impossible to accidentally display in wrong order
-- Single source of truth for sorting logic
-
 Data files in `src/data/` should ideally be pre-sorted for readability, but the page components will sort them programmatically anyway.
-
-### Example:
-```typescript
-// ✅ CORRECT - Recent first
-export const publicationsData: Publication[] = [
-  { date: '2025-09', ... },  // Most recent
-  { date: '2024-09', ... },
-  { date: '2023-04', ... },
-  { date: '2022-03', ... },  // Oldest
-];
-
-// ❌ WRONG - Old first
-export const publicationsData: Publication[] = [
-  { date: '2022-03', ... },  // Oldest first is wrong
-  { date: '2023-04', ... },
-];
-```
 
 ## Data Structure Guidelines
 
@@ -54,22 +32,27 @@ export const publicationsData: Publication[] = [
 - Include `organization` for all entries
 - Sort by `date` descending
 
+### Skills (`src/data/skills.ts`)
+- Add `currentFocus: true` to skill categories you're actively working on
+- This adds a "Current Focus" badge and subtle gradient background
+
 ## Page Layout Pattern
 
 All list-based pages follow this consistent pattern:
-1. Numbered entries (1, 2, 3...)
-2. Bordered cards with hover effects
-3. Type/category chips with icons
-4. Metadata chips (dates, organizations, genres)
-5. Descriptions in muted text
-6. Responsive design (mobile-first)
+1. Bordered cards with hover effects (lift + shadow)
+2. Type/category chips with icons
+3. Metadata chips (dates, organizations, genres)
+4. Descriptions in muted text
+5. Responsive design (mobile-first with p-4 md:p-6)
+6. Collapsible filters on mobile
 
 ## Technology Stack
 
-- **Framework**: Next.js with App Router
-- **Styling**: Tailwind CSS
+- **Framework**: Next.js 16 with App Router & Turbopack
+- **Styling**: Tailwind CSS 4
 - **Icons**: lucide-react
 - **Type Safety**: TypeScript
+- **Image Optimization**: Sharp (WebP)
 
 ## File Organization
 
@@ -77,168 +60,40 @@ All list-based pages follow this consistent pattern:
 src/
 ├── app/              # Page components
 ├── components/       # Reusable UI components
+│   ├── cards/        # Card components (Experience, Education)
+│   ├── filters/      # Search and filter components
+│   ├── layout/       # Header, Footer
+│   ├── sections/     # Hero, ContactForm, SectionContainer
+│   └── ui/           # Button, Badge, BackToTop, ScrollProgress, Skeleton, ThemeToggle
 ├── data/            # Data files (sort by date!)
-└── types/           # TypeScript interfaces
+├── types/           # TypeScript interfaces
+└── lib/             # Utilities (theme, schema, fonts)
 ```
 
 ## When Adding New Content
 
 1. Add data to appropriate file in `src/data/`
-2. **Sort by date (recent first)**
+2. **Sort by date (recent first)** in the data file (for readability)
 3. Update types in `src/types/index.ts` if needed
 4. Ensure page component displays new data correctly
-5. Test responsive design
+5. Test responsive design on mobile, tablet, and desktop
 6. Check that chips/badges render correctly
+7. Verify filters work if applicable
 
-## Remember
+## Key Design Principles
 
 - **Always sort by date, most recent first**
-- Keep consistent styling across all pages
+- Keep consistent styling across all pages (max-w-5xl)
 - Split multi-value fields (genres, tags) into separate chips
 - Use semantic HTML and accessibility best practices
+- All interactive elements have 44x44px minimum touch targets
+- Focus states are visible for keyboard navigation
+- Active projects show "Active" badge with blue styling
+- Current focus skills show "Current Focus" badge with gradient background
 
-## Pending Improvements & Features
+## Badge Variants
 
-### ✅ Completed
-- ✓ Education page created with IIT Kharagpur achievements
-- ✓ Contact form working (mailto is acceptable for now)
-- ✓ **Profile image optimized** - Converted profile.JPG to WebP (449KB → 172KB, 61.56% reduction)
-- ✓ **Custom 404 page** - Branded not-found.tsx with navigation options
-
-### 🎯 High Priority - Quick Wins
-
-1. **Analytics Integration**
-   - No tracking currently
-   - Add Vercel Analytics (privacy-friendly, built-in)
-   - Alternative: Plausible or Simple Analytics
-   - Track page views, popular content, user flow
-
-2. **Add Loading Skeletons**
-   - For filtered content in Articles/Books/Entertainment
-   - Improve perceived performance during client-side filtering
-   - Better UX on slower connections
-
-### 📊 Content Enhancements
-
-3. **Projects Need Visual Content**
-   - No screenshots/demos for TI projects
-   - Add images for Cross-Reference, Selection Tools, Filter Design Tool, etc.
-   - Consider project gallery or screenshots section
-   - Would significantly improve projects page visual appeal
-
-4. **Add "Currently Working On" Section**
-   - Show active projects on home page
-   - Highlight current focus areas
-   - Demonstrates continuous learning and engagement
-
-5. **Entertainment Page Personal Touch**
-   - Add personal ratings (currently no rating field)
-   - Add "Currently Watching/Reading" section
-   - Consider brief personal reviews or highlights
-
-6. **Articles Could Show Engagement Metrics**
-   - Medium API integration for views/claps
-   - Add read time estimates
-   - Related articles section
-   - Show article popularity
-
-7. **Local Blog for Portfolio Case Studies**
-   - Consider hosting some content locally (not just Medium links)
-   - Write detailed project case studies
-   - Technical deep-dives for major projects
-   - Better SEO and ownership of content
-
-### 🔧 Technical Improvements
-
-8. **Global Search**
-    - No search across content currently
-    - Implement command palette (⌘K style)
-    - Search across articles, projects, publications, skills
-    - Improve content discoverability
-
-9. **Add Breadcrumb Navigation UI**
-    - Schema exists but no visual breadcrumbs
-    - Improve navigation UX especially on detail pages
-    - Helps with orientation in deep navigation
-
-10. **PWA Support**
-    - Add service worker for offline support
-    - Add manifest.json for installability
-    - Cache static assets
-    - Enable "Add to Home Screen"
-
-11. **Implement ISR/On-Demand Revalidation**
-    - For articles page when new content added
-    - Currently static generation only
-    - Consider dynamic routes for article details
-
-### 🚀 Performance & SEO
-
-12. **Add Per-Page Meta Descriptions**
-    - Some pages have generic descriptions
-    - Customize for better SEO
-    - Include relevant keywords for each section
-
-13. **Add Custom OG Images**
-    - Currently using profile.JPG for all pages
-    - Generate page-specific OG images
-    - Better social media sharing appearance
-    - Use @vercel/og or similar
-
-14. **Add RSS Feed**
-    - For articles section
-    - Help with content discoverability
-    - Enable readers to subscribe to updates
-
-15. **Add Sitemap**
-    - Generate dynamic sitemap.xml
-    - Improve SEO and crawlability
-    - Include all pages and update dates
-
-### 🎨 UX Enhancements
-
-16. **Add Smooth Scroll Animations**
-    - Fade-in on scroll for cards
-    - Use Intersection Observer API
-    - Subtle, professional animations
-    - Improve visual engagement
-
-17. **Add "Back to Top" Button**
-    - On long pages (articles, books, entertainment, skills)
-    - Floating button that appears on scroll
-    - Improves navigation on mobile
-
-18. **Improve Skills Page Visualization**
-    - Currently just lists with badges
-    - Add proficiency level indicators
-    - Years of experience per skill
-    - Visual skill matrix or chart
-    - Group by proficiency level
-
-19. **Enhance Mobile Experience**
-    - Test all interactive elements on mobile
-    - Optimize filter UI for mobile
-    - Consider mobile-specific navigation improvements
-    - Ensure touch targets are adequate size
-
-### 📈 Priority Order
-
-**Start with these (Immediate Impact):**
-1. **Integrate Analytics** (20 min) - Understand user behavior (Skipped for now)
-
-**Next Phase (High Value):**
-2. **Add project screenshots** (2-3 hours) - Visual appeal
-3. **Custom OG images** (1 hour) - Social sharing
-4. **Global search** (3-4 hours) - User experience
-5. **Loading skeletons** (1 hour) - Perceived performance
-
-**Content & Engagement:**
-6. **"Currently Working On" section** (30 min)
-7. **Local blog setup** (2-3 hours)
-8. **Article engagement metrics** (1-2 hours)
-
-**Advanced Features:**
-9. **PWA support** (2-3 hours)
-10. **Smooth scroll animations** (1-2 hours)
-11. **Skills page visualization** (2-3 hours)
-12. **Back to top button** (30 min)
+- `default` - Gray background, used for general tags
+- `primary` - Blue background/text/border, used for emphasis (Active, Current Focus)
+- `success` - Reserved for future use
+- `warning` - Reserved for future use

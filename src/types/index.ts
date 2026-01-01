@@ -29,6 +29,7 @@ export interface Project {
 export interface Skill {
   category: string;
   items: string[];
+  currentFocus?: boolean;
 }
 
 export interface Publication {

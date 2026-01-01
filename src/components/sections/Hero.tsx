@@ -4,12 +4,12 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen">
-      <div className="container mx-auto flex min-h-screen items-center px-4 py-20">
+    <section className="relative min-h-[80vh]">
+      <div className="container mx-auto flex min-h-[80vh] items-center px-4 py-20">
         <div className="w-full">
           <div className="mx-auto flex max-w-5xl flex-col items-center gap-12 text-center lg:flex-row lg:items-center lg:text-left">
             <div className="flex-shrink-0">
-              <div className="relative h-48 w-48 overflow-hidden rounded-lg md:h-56 md:w-56">
+              <div className="relative h-48 w-48 overflow-hidden rounded-full md:h-56 md:w-56">
                 <Image
                   src="/profile.webp"
                   alt="Profile"
@@ -25,41 +25,53 @@ export default function Hero() {
                 {aboutData.name}
               </h1>
 
-              <p className="mb-6 text-lg text-muted md:text-xl lg:text-2xl">
+              <p className="mb-6 text-xl text-muted md:text-xl lg:text-2xl">
                 {aboutData.title}
               </p>
 
-              <div
-                className="mb-8 max-w-2xl text-sm leading-relaxed text-muted md:text-base lg:text-lg"
-                dangerouslySetInnerHTML={{ __html: aboutData.bio }}
-              />
+              <p className="mb-8 max-w-2xl text-base leading-relaxed text-muted md:text-base lg:text-lg">
+                {aboutData.bio}
+              </p>
 
-              <div className="mb-8 flex flex-wrap justify-center gap-3 lg:justify-start">
-                <a href="#projects">
-                  <Button>
-                    View My Work
-                  </Button>
-                </a>
-                <a href="#articles">
-                  <Button>
-                    View My Articles
-                  </Button>
-                </a>
-                <a href="#contact">
-                  <Button variant="outline">
-                    Let&apos;s Connect
-                  </Button>
+              <div className="flex flex-col items-center gap-4 lg:items-start">
+                <div className="flex flex-wrap justify-center gap-3 lg:justify-start">
+                  <a href="#projects">
+                    <Button className="px-6 py-3 text-base font-semibold shadow-md transition-all hover:scale-105 hover:shadow-lg">
+                      View My Work
+                    </Button>
+                  </a>
+                  <a href="#contact">
+                    <Button variant="outline" className="px-6 py-3 text-base font-semibold">
+                      Let&apos;s Connect
+                    </Button>
+                  </a>
+                </div>
+                <a
+                  href="#articles"
+                  className="group flex items-center gap-2 text-sm font-medium text-muted transition-colors hover:text-foreground"
+                >
+                  <span>Explore my articles</span>
+                  <svg
+                    className="h-4 w-4 transition-transform group-hover:translate-x-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
                 </a>
               </div>
 
-              <div className="flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+              <div className="mt-6">
+
+                <div className="flex flex-wrap items-center justify-center gap-3 lg:justify-start">
                 {aboutData.socialLinks.map((link) => (
                   <a
                     key={link.name}
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 rounded border border-border bg-card-bg px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
+                    className="flex min-h-[44px] items-center gap-2 rounded border border-border bg-card-bg px-4 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
                     title={link.name}
                   >
                     {link.icon === 'github' && (
@@ -85,6 +97,7 @@ export default function Hero() {
                     <span>{link.name}</span>
                   </a>
                 ))}
+                </div>
               </div>
             </div>
           </div>

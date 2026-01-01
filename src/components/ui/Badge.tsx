@@ -15,7 +15,7 @@ export default function Badge({
     default:
       'bg-secondary text-muted border border-border',
     primary:
-      'bg-secondary text-foreground border border-border',
+      'bg-primary/10 text-primary border border-primary/30 font-semibold',
     success:
       'bg-secondary text-foreground border border-border',
     warning:
@@ -24,7 +24,7 @@ export default function Badge({
 
   return (
     <span
-      className={`inline-flex items-center rounded px-2 py-0.5 text-xs font-medium md:py-1 ${variantStyles[variant]} ${className}`}
+      className={`inline-flex min-h-[32px] items-center break-words rounded px-3 py-1.5 text-xs font-medium md:py-1 ${variantStyles[variant]} ${className}`}
     >
       {children}
     </span>

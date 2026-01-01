@@ -34,6 +34,7 @@ export default function EntertainmentClient({ entertainment, allGenres }: Entert
   const [selectedType, setSelectedType] = useState('all');
   const [sortBy, setSortBy] = useState('year-desc');
   const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE);
+  const [showFilters, setShowFilters] = useState(false);
 
   const filteredAndSortedData = useMemo(() => {
     let filtered = [...entertainment];
@@ -91,7 +92,24 @@ export default function EntertainmentClient({ entertainment, allGenres }: Entert
   return (
     <div className="mx-auto max-w-5xl">
       <div className="mb-8 space-y-4 border border-border bg-card-bg p-4 md:p-6">
-        <div className="flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">
+        <button
+          onClick={() => setShowFilters(!showFilters)}
+          className="flex w-full items-center justify-between md:hidden"
+        >
+          <h3 className="text-sm font-semibold text-foreground">
+            Filters {activeFiltersCount > 0 && `(${activeFiltersCount})`}
+          </h3>
+          <svg
+            className={`h-5 w-5 transition-transform ${showFilters ? 'rotate-180' : ''}`}
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+
+        <div className="hidden flex-col items-start justify-between gap-3 md:flex sm:flex-row sm:items-center">
           <h3 className="text-sm font-semibold text-foreground">
             Filters {activeFiltersCount > 0 && `(${activeFiltersCount})`}
           </h3>
@@ -106,7 +124,7 @@ export default function EntertainmentClient({ entertainment, allGenres }: Entert
           )}
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className={`grid gap-4 sm:grid-cols-2 lg:grid-cols-4 ${!showFilters ? 'hidden md:grid' : ''}`}>
           <SearchInput
             value={searchQuery}
             onChange={setSearchQuery}
@@ -147,7 +165,7 @@ export default function EntertainmentClient({ entertainment, allGenres }: Entert
             {visibleItems.map((item) => (
               <div
                 key={item.id}
-                className="group border border-border bg-card-bg p-6 transition-all hover:border-foreground/20 hover:shadow-sm"
+                className="group border border-border bg-card-bg p-4 transition-all duration-200 hover:-translate-y-1 hover:border-foreground/20 hover:shadow-md md:p-6"
               >
                 <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
                   <div className="flex-1 space-y-3">
