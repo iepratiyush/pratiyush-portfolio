@@ -2,6 +2,8 @@
 
 A modern, professional portfolio website built with Next.js 16, TypeScript, and Tailwind CSS.
 
+🌐 **Live Site**: [https://pratiyush-portfolio.vercel.app](https://pratiyush-portfolio.vercel.app)
+
 ## 🚀 Features
 
 - **Modern Tech Stack**: Next.js 16 with App Router, TypeScript, Tailwind CSS 4
@@ -164,20 +166,55 @@ Uses Geist Sans and Geist Mono fonts. Configure in `src/app/layout.tsx`.
 
 ## 🚀 Deployment
 
-### Deploy to Vercel (Recommended)
+### Live Deployment
 
-1. Push code to GitHub
-2. Import project to [Vercel](https://vercel.com)
-3. Deploy automatically
+**Production URL**: [https://pratiyush-portfolio.vercel.app](https://pratiyush-portfolio.vercel.app)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/pratiyush-portfolio)
+**Status**: ✅ Live and deployed on Vercel
 
-### Build for Production
+### Automatic Deployments
+
+Every push to the `main` branch on GitHub automatically triggers a new deployment:
+
+```bash
+# Make your changes
+git add .
+git commit -m "Your changes"
+git push
+
+# Vercel auto-deploys in ~1 minute
+```
+
+**Preview Deployments**: Every pull request gets a unique preview URL for testing.
+
+### Deploy Your Own Copy
+
+1. **Fork this repository** on GitHub
+2. Go to [Vercel](https://vercel.com) and sign up/login
+3. Click **"Add New Project"**
+4. Import your forked repository
+5. Click **"Deploy"**
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/iepratiyush/pratiyush-portfolio)
+
+### Manual Build for Production
 
 ```bash
 npm run build
 npm run start
 ```
+
+### Custom Domain Setup (Optional)
+
+To use your own domain:
+
+1. In Vercel dashboard → Settings → Domains
+2. Add your custom domain (e.g., `pratiyush.com`)
+3. Update DNS records as instructed
+4. Update URLs in code:
+   - `src/app/layout.tsx` (line 41)
+   - `src/lib/schema.ts` (line 7)
+5. Push changes to GitHub
 
 ## 📊 Performance
 

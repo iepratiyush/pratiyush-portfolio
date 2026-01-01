@@ -4,7 +4,7 @@ import { publicationsData } from '@/data/publications';
 import { skillsData } from '@/data/skills';
 import { Article } from '@/types';
 
-const SITE_URL = 'https://pratiyush.com';
+const SITE_URL = 'https://pratiyush-portfolio.vercel.app';
 
 export function getPersonSchema() {
   const allSkills = skillsData.flatMap(category => category.items);
@@ -15,7 +15,7 @@ export function getPersonSchema() {
     '@id': `${SITE_URL}/#person`,
     name: aboutData.name,
     url: SITE_URL,
-    image: `${SITE_URL}/profile.JPG`,
+    image: `${SITE_URL}/profile.webp`,
     email: aboutData.email,
     jobTitle: 'Software Engineering Manager & Member Group Technical Staff',
     worksFor: {

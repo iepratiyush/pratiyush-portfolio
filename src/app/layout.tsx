@@ -38,26 +38,26 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Pratiyush Prakash' }],
   creator: 'Pratiyush Prakash',
-  metadataBase: new URL('https://pratiyush.com'),
+  metadataBase: new URL('https://pratiyush-portfolio.vercel.app'),
   icons: {
     icon: '/favicon.png',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://pratiyush.com',
+    url: 'https://pratiyush-portfolio.vercel.app',
     title: 'Pratiyush Prakash | Portfolio',
     description:
       'Portfolio of Pratiyush Prakash - Software Engineering Manager & MGTS at Texas Instruments. Expertise in AI/ML, system architecture, and technical leadership.',
     siteName: 'Pratiyush Prakash Portfolio',
-    images: ['/profile.JPG'],
+    images: ['/profile.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Pratiyush Prakash | Portfolio',
     description:
       'Portfolio of Pratiyush Prakash - Software Engineering Manager & MGTS at Texas Instruments. Expertise in AI/ML, system architecture, and technical leadership.',
-    images: ['/profile.JPG'],
+    images: ['/profile.webp'],
   },
   robots: {
     index: true,
