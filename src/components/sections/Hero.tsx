@@ -47,7 +47,7 @@ export default function Hero() {
                 </a>
                 <a href="#contact">
                   <Button variant="outline">
-                    Let's Connect
+                    Let&apos;s Connect
                   </Button>
                 </a>
               </div>

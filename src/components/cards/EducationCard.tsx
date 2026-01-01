@@ -1,5 +1,4 @@
 import { Education } from '@/types';
-import Badge from '@/components/ui/Badge';
 
 interface EducationCardProps {
   education: Education;

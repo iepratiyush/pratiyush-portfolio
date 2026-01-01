@@ -1,6 +1,10 @@
-const sharp = require('sharp');
-const fs = require('fs');
-const path = require('path');
+import sharp from 'sharp';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 async function optimizeImage() {
   const inputPath = path.join(__dirname, '../public/profile.JPG');
@@ -24,4 +28,4 @@ async function optimizeImage() {
   }
 }
 
-optimizeImage();
+optimizeImage().catch(console.error);

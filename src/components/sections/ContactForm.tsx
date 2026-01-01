@@ -25,7 +25,7 @@ export default function ContactForm() {
       setFormData({ name: '', email: '', message: '' });
 
       setTimeout(() => setStatus('idle'), 3000);
-    } catch (error) {
+    } catch {
       setStatus('error');
       setTimeout(() => setStatus('idle'), 3000);
     }

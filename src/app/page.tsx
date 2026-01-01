@@ -261,7 +261,7 @@ export default function Home() {
       >
         <div className="mx-auto max-w-2xl">
           <p className="mb-8 text-center text-lg text-muted">
-            I'm always open to new opportunities and interesting projects. Feel
+            I&apos;m always open to new opportunities and interesting projects. Feel
             free to reach out!
           </p>
           <ContactForm />

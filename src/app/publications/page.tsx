@@ -22,7 +22,7 @@ export default function PublicationsPage() {
       >
         <div className="mx-auto max-w-5xl">
           <div className="space-y-6">
-            {sortedPublications.map((pub, index) => (
+            {sortedPublications.map((pub) => (
               <div
                 key={pub.id}
                 className="group border border-border bg-card-bg p-4 transition-all hover:border-foreground/20 hover:shadow-sm md:p-6"
