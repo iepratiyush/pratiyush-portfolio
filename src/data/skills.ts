@@ -24,6 +24,7 @@ export const skillsData: Skill[] = [
       'Agile',
       'Technical Writing',
     ],
+    currentFocus: true,
   },
   {
     category: 'Programming Languages',
