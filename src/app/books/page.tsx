@@ -1,27 +1,25 @@
 import { Metadata } from 'next';
 import SectionContainer from '@/components/sections/SectionContainer';
-import BookCard from '@/components/cards/BookCard';
 import { booksData } from '@/data/books';
+import BooksClient from './BooksClient';
 
 export const metadata: Metadata = {
-  title: 'Book Recommendations',
-  description: 'Books I recommend for personal and professional growth.',
+  title: 'Books',
+  description: 'Curated collection of books across various genres.',
 };
 
 export default function BooksPage() {
+  const allGenres = Array.from(
+    new Set(booksData.flatMap((book) => book.genre.split('/').map((g) => g.trim())))
+  ).sort();
+
   return (
-    <>
-      <SectionContainer
-        title="Book Recommendations"
-        subtitle="Books that shaped my thinking"
-        className="pt-24"
-      >
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {booksData.map((book) => (
-            <BookCard key={book.id} book={book} />
-          ))}
-        </div>
-      </SectionContainer>
-    </>
+    <SectionContainer
+      title="Books I've Read"
+      subtitle={`A curated collection of ${booksData.length} books across various genres`}
+      className="pt-24"
+    >
+      <BooksClient books={booksData} allGenres={allGenres} />
+    </SectionContainer>
   );
 }

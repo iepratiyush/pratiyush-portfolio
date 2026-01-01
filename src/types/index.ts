@@ -1,7 +1,7 @@
 export interface SocialLink {
   name: string;
   url: string;
-  icon?: string;
+  icon?: 'github' | 'linkedin' | 'medium' | 'instagram';
 }
 
 export interface Experience {
@@ -18,12 +18,12 @@ export interface Experience {
 export interface Project {
   id: string;
   title: string;
+  role: string;
+  duration: string;
+  organization: string;
   description: string;
-  technologies: string[];
-  githubUrl?: string;
-  liveUrl?: string;
-  imageUrl?: string;
-  featured?: boolean;
+  skills: string[];
+  link?: string;
 }
 
 export interface Skill {
@@ -34,9 +34,11 @@ export interface Skill {
 export interface Publication {
   id: string;
   title: string;
-  type: 'paper' | 'article' | 'award';
+  type: 'paper' | 'conference' | 'award';
   date: string;
   description: string;
+  venue?: string;
+  organization?: string;
   url?: string;
 }
 
@@ -54,9 +56,9 @@ export interface Book {
   title: string;
   author: string;
   genre: string;
-  rating?: number;
-  review?: string;
-  coverUrl?: string;
+  description?: string;
+  bookUrl?: string;
+  authorUrl?: string;
 }
 
 export interface Entertainment {
@@ -64,10 +66,10 @@ export interface Entertainment {
   title: string;
   type: 'movie' | 'series';
   genre: string;
-  rating?: number;
-  review?: string;
-  posterUrl?: string;
+  description?: string;
   year?: number;
+  url?: string;
+  rating?: number;
 }
 
 export interface AboutMe {
@@ -78,4 +80,16 @@ export interface AboutMe {
   email?: string;
   location?: string;
   socialLinks: SocialLink[];
+}
+
+export interface Education {
+  id: string;
+  institution: string;
+  degree: string;
+  field: string;
+  startDate: string;
+  endDate: string;
+  grade: string;
+  activities?: string;
+  achievements?: string[];
 }

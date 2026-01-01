@@ -4,6 +4,7 @@ import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { ThemeProvider } from '@/lib/theme';
+import { getPersonSchema, getWebSiteSchema } from '@/lib/schema';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,13 +22,19 @@ export const metadata: Metadata = {
     template: '%s | Pratiyush Prakash',
   },
   description:
-    'Personal portfolio of Pratiyush Prakash - Software Engineer, showcasing projects, experience, articles, and recommendations.',
+    'Portfolio of Pratiyush Prakash - Software Engineering Manager & MGTS at Texas Instruments. Expertise in AI/ML, system architecture, and technical leadership.',
   keywords: [
     'Pratiyush Prakash',
-    'Portfolio',
-    'Software Engineer',
-    'Web Developer',
-    'Next.js',
+    'Software Engineering Manager',
+    'MGTS',
+    'Texas Instruments',
+    'AI/ML',
+    'System Architecture',
+    'Technical Leadership',
+    'Full Stack Development',
+    'Machine Learning',
+    'Microservices',
+    'IIT Kharagpur',
   ],
   authors: [{ name: 'Pratiyush Prakash' }],
   creator: 'Pratiyush Prakash',
@@ -41,7 +48,7 @@ export const metadata: Metadata = {
     url: 'https://pratiyush.com',
     title: 'Pratiyush Prakash | Portfolio',
     description:
-      'Personal portfolio of Pratiyush Prakash - Software Engineer, showcasing projects, experience, articles, and recommendations.',
+      'Portfolio of Pratiyush Prakash - Software Engineering Manager & MGTS at Texas Instruments. Expertise in AI/ML, system architecture, and technical leadership.',
     siteName: 'Pratiyush Prakash Portfolio',
     images: ['/profile.JPG'],
   },
@@ -49,7 +56,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Pratiyush Prakash | Portfolio',
     description:
-      'Personal portfolio of Pratiyush Prakash - Software Engineer, showcasing projects, experience, articles, and recommendations.',
+      'Portfolio of Pratiyush Prakash - Software Engineering Manager & MGTS at Texas Instruments. Expertise in AI/ML, system architecture, and technical leadership.',
     images: ['/profile.JPG'],
   },
   robots: {
@@ -70,8 +77,21 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const personSchema = getPersonSchema();
+  const websiteSchema = getWebSiteSchema();
+
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} bg-background text-foreground antialiased transition-colors`}
       >

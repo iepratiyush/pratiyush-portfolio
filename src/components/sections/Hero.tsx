@@ -7,11 +7,11 @@ export default function Hero() {
     <section className="relative min-h-screen">
       <div className="container mx-auto flex min-h-screen items-center px-4 py-20">
         <div className="w-full">
-          <div className="mx-auto flex max-w-5xl flex-col items-start gap-16 lg:flex-row lg:items-center">
+          <div className="mx-auto flex max-w-5xl flex-col items-center gap-12 text-center lg:flex-row lg:items-center lg:text-left">
             <div className="flex-shrink-0">
-              <div className="relative h-56 w-56 overflow-hidden rounded-lg">
+              <div className="relative h-48 w-48 overflow-hidden rounded-lg md:h-56 md:w-56">
                 <Image
-                  src="/profile.JPG"
+                  src="/profile.webp"
                   alt="Profile"
                   fill
                   className="object-cover"
@@ -21,32 +21,38 @@ export default function Hero() {
             </div>
 
             <div className="flex-1">
-              <h1 className="mb-4 text-5xl font-bold tracking-tight text-foreground md:text-6xl">
+              <h1 className="mb-4 text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-6xl">
                 {aboutData.name}
               </h1>
 
-              <p className="mb-6 text-xl text-muted md:text-2xl">
+              <p className="mb-6 text-lg text-muted md:text-xl lg:text-2xl">
                 {aboutData.title}
               </p>
 
-              <p className="mb-8 max-w-2xl text-base leading-relaxed text-muted md:text-lg">
-                {aboutData.bio}
-              </p>
+              <div
+                className="mb-8 max-w-2xl text-sm leading-relaxed text-muted md:text-base lg:text-lg"
+                dangerouslySetInnerHTML={{ __html: aboutData.bio }}
+              />
 
-              <div className="mb-8 flex flex-wrap gap-4">
+              <div className="mb-8 flex flex-wrap justify-center gap-3 lg:justify-start">
                 <a href="#projects">
-                  <Button size="lg">
+                  <Button>
                     View My Work
                   </Button>
                 </a>
+                <a href="#articles">
+                  <Button>
+                    View My Articles
+                  </Button>
+                </a>
                 <a href="#contact">
-                  <Button variant="outline" size="lg">
+                  <Button variant="outline">
                     Let's Connect
                   </Button>
                 </a>
               </div>
 
-              <div className="flex flex-wrap items-center gap-3">
+              <div className="flex flex-wrap items-center justify-center gap-3 lg:justify-start">
                 {aboutData.socialLinks.map((link) => (
                   <a
                     key={link.name}
@@ -69,6 +75,11 @@ export default function Hero() {
                     {link.icon === 'medium' && (
                       <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
+                      </svg>
+                    )}
+                    {link.icon === 'instagram' && (
+                      <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                       </svg>
                     )}
                     <span>{link.name}</span>

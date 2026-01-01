@@ -1,26 +1,33 @@
 import { Metadata } from 'next';
 import SectionContainer from '@/components/sections/SectionContainer';
-import ArticleCard from '@/components/cards/ArticleCard';
 import { articlesData } from '@/data/articles';
+import ArticlesClient from './ArticlesClient';
+import { getBlogPostingListSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Articles',
-  description: 'Technical articles and blog posts I have written.',
+  description: 'Technical writing and blog posts on software engineering, AI/ML, and technology.',
 };
 
 export default function ArticlesPage() {
+  const allTags = Array.from(
+    new Set(articlesData.flatMap((article) => article.tags || []))
+  ).sort();
+
+  const blogListSchema = getBlogPostingListSchema(articlesData);
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogListSchema) }}
+      />
       <SectionContainer
         title="Articles"
-        subtitle="My technical writing and blog posts"
+        subtitle={`My technical writing and blog posts - ${articlesData.length} articles`}
         className="pt-24"
       >
-        <div className="grid gap-6 md:grid-cols-2">
-          {articlesData.map((article) => (
-            <ArticleCard key={article.id} article={article} />
-          ))}
-        </div>
+        <ArticlesClient articles={articlesData} allTags={allTags} />
       </SectionContainer>
     </>
   );

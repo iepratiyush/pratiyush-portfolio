@@ -2,19 +2,22 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 import ThemeToggle from '@/components/ui/ThemeToggle';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const navLinks = [
     { href: '/', label: 'Home' },
     { href: '/about', label: 'About' },
-    { href: '/experience', label: 'Experience' },
     { href: '/projects', label: 'Projects' },
-    { href: '/skills', label: 'Skills' },
-    { href: '/publications', label: 'Publications' },
     { href: '/articles', label: 'Articles' },
+    { href: '/experience', label: 'Experience' },
+    { href: '/education', label: 'Education' },
+    { href: '/publications', label: 'Publications' },
+    { href: '/skills', label: 'Skills' },
     { href: '/books', label: 'Books' },
     { href: '/entertainment', label: 'Entertainment' },
   ];
@@ -31,17 +34,24 @@ export default function Header() {
           </Link>
 
           <div className="flex items-center gap-6">
-            <ul className="hidden space-x-6 md:flex">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm font-medium text-muted transition-colors hover:text-foreground"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+            <ul className="hidden space-x-1 md:flex">
+              {navLinks.map((link) => {
+                const isActive = pathname === link.href;
+                return (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className={`rounded-md px-3 py-2 text-sm font-medium transition-all ${
+                        isActive
+                          ? 'bg-secondary text-foreground'
+                          : 'text-muted hover:bg-secondary/50 hover:text-foreground'
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
 
             <ThemeToggle />
@@ -72,17 +82,24 @@ export default function Header() {
 
         {isMenuOpen && (
           <ul className="mt-4 space-y-2 md:hidden">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="block py-2 text-muted transition-colors hover:text-foreground"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className={`block py-2 transition-colors hover:text-foreground ${
+                      isActive
+                        ? 'font-semibold text-foreground'
+                        : 'text-muted'
+                    }`}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         )}
       </nav>

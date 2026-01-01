@@ -9,6 +9,12 @@ export const metadata: Metadata = {
 };
 
 export default function ExperiencePage() {
+  const sortedExperience = [...experienceData].sort((a, b) => {
+    const dateA = a.endDate === 'Present' ? new Date() : new Date(a.endDate);
+    const dateB = b.endDate === 'Present' ? new Date() : new Date(b.endDate);
+    return dateB.getTime() - dateA.getTime();
+  });
+
   return (
     <>
       <SectionContainer
@@ -17,7 +23,7 @@ export default function ExperiencePage() {
         className="pt-24"
       >
         <div className="mx-auto max-w-3xl">
-          {experienceData.map((exp) => (
+          {sortedExperience.map((exp) => (
             <ExperienceCard key={exp.id} experience={exp} />
           ))}
         </div>

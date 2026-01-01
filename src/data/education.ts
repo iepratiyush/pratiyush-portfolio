@@ -1,0 +1,57 @@
+import { Education } from '@/types';
+
+export const educationData: Education[] = [
+  {
+    id: '1',
+    institution: 'Indian Institute of Technology, Kharagpur',
+    degree: 'Bachelor of Technology (BTech)',
+    field: 'Instrumentation Engineering',
+    startDate: '2013',
+    endDate: '2017',
+    grade: '9.1/10',
+    activities: 'NGO Gopali Youth Welfare Society, Nehru Hall',
+    achievements: [
+      'Institute Silver Medal - Department Rank 1',
+      'D.V.S Murthy Merit Award - Best Outgoing Student of Instrumentation Engineering 2017',
+      'Participated in various General Championships as part of Nehru Hall',
+      'Team head of Project Management Team at Gopali Youth Welfare Society',
+      'Co-founded KGP Blood Connect - blood donor database platform',
+    ],
+  },
+  {
+    id: '2',
+    institution: 'Indian Institute of Technology, Kharagpur',
+    degree: 'Minor',
+    field: 'ECE, Electrical, Electronics and Communications Engineering',
+    startDate: '2013',
+    endDate: '2017',
+    grade: '',
+  },
+  {
+    id: '3',
+    institution: 'DAV Public School',
+    degree: 'Higher Secondary School Certificate Examination',
+    field: 'Science Stream',
+    startDate: '2011',
+    endDate: '2013',
+    grade: '91.2%',
+  },
+  {
+    id: '4',
+    institution: 'DAV Public School',
+    degree: 'Secondary School Certificate',
+    field: '',
+    startDate: '2000',
+    endDate: '2011',
+    grade: '10 CGPA',
+  },
+  {
+    id: '5',
+    institution: 'GATE 2017',
+    degree: 'All India Rank 31',
+    field: 'Instrumentation Engineering',
+    startDate: '2017',
+    endDate: '2017',
+    grade: 'AIR 31',
+  },
+];

@@ -13,7 +13,7 @@ export default function SkillsPage() {
     <>
       <SectionContainer
         title="Skills"
-        subtitle="Technologies and tools I work with"
+        subtitle="Technical expertise spanning AI/ML, architecture, and leadership"
         className="pt-24"
       >
         <div className="mx-auto max-w-4xl space-y-6">

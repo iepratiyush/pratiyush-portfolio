@@ -2,52 +2,60 @@ import { Skill } from '@/types';
 
 export const skillsData: Skill[] = [
   {
-    category: 'Frontend',
+    category: 'AI/ML & Data',
+    items: ['Supervised Learning', 'Unsupervised Learning', 'Gen AI', 'Agentic AI', 'LLMs', 'Transformer Models', 'RAG', 'Prompt Engineering', 'Recommendation Systems', 'MLOps', 'Feature Engineering', 'ETL', 'Data Modeling'],
+  },
+  {
+    category: 'Architecture & Design',
+    items: ['System Design', 'Microservices', 'Distributed Systems', 'REST API', 'Event-Driven Architecture', 'API Gateway', 'API Design', 'Load Balancing'],
+  },
+  {
+    category: 'Leadership & Soft Skills',
+    items: [
+      'High-Performing Team Building',
+      'Cross-Functional Leadership',
+      'Strategic Planning',
+      'Problem Solving',
+      'Technical Communication',
+      'Mentoring',
+      'Stakeholder Management',
+      'Agile',
+      'Technical Writing',
+    ],
+  },
+  {
+    category: 'Programming Languages',
+    items: ['Java', 'Python', 'JavaScript', 'TypeScript'],
+  },
+  {
+    category: 'Backend Development',
+    items: ['Spring Boot', 'FastAPI', 'Express'],
+  },
+  {
+    category: 'Frontend Development',
     items: [
       'React',
       'Next.js',
+      'Angular',
       'TypeScript',
-      'JavaScript',
-      'HTML/CSS',
+      'StencilJS',
+      'HTML',
+      'CSS',
       'Tailwind CSS',
-      'Redux',
-      'React Query',
+      'Thymeleaf',
+      'Ag-Grid',
     ],
   },
   {
-    category: 'Backend',
-    items: [
-      'Node.js',
-      'Express',
-      'NestJS',
-      'REST APIs',
-      'GraphQL',
-      'Microservices',
-    ],
-  },
-  {
-    category: 'Database',
-    items: ['PostgreSQL', 'MongoDB', 'MySQL', 'Redis', 'Prisma', 'TypeORM'],
+    category: 'Database & Caching',
+    items: ['SQL', 'NoSQL', 'Oracle', 'Redis', 'Oracle SODA'],
   },
   {
     category: 'DevOps & Tools',
-    items: [
-      'Docker',
-      'AWS',
-      'Git',
-      'GitHub Actions',
-      'CI/CD',
-      'Linux',
-      'Nginx',
-    ],
+    items: ['Docker', 'CI/CD', 'Monitoring', 'Git', 'Jira', 'Confluence', 'VS Code', 'Postman', 'Insomnia', 'Claude Code'],
   },
   {
-    category: 'Others',
-    items: [
-      'System Design',
-      'Testing (Jest, React Testing Library)',
-      'Agile/Scrum',
-      'Problem Solving',
-    ],
+    category: 'Testing & Quality',
+    items: ['Unit Testing', 'Integration Testing', 'Performance Testing'],
   },
 ];
