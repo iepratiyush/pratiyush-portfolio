@@ -25,14 +25,14 @@
 }
 
 [data-theme="dark"] {
-  --background: #222831;
-  --foreground: #E0E0E0;
+  --background: #1a1d24;
+  --foreground: #e8eaed;
 
   --primary: #3b82f6;
   --primary-hover: #2563eb;
   --primary-light: #60a5fa;
 
-  --secondary: #393E46;
+  --secondary: #2d323d;
 
   --accent: #3b82f6;
   --accent-hover: #2563eb;
@@ -41,11 +41,11 @@
   --success: #22c55e;
   --warning: #f59e0b;
 
-  --muted: #d1d5db;
-  --border: #30353E;
+  --muted: #9ca3af;
+  --border: #3a3f4b;
 
-  --card-bg: #2C313A;
-  --card-border: #30353E;
+  --card-bg: #262b35;
+  --card-border: #3a3f4b;
 }
 
 @theme inline {
