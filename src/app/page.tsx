@@ -15,7 +15,7 @@ import Badge from '@/components/ui/Badge';
 import Link from 'next/link';
 import Button from '@/components/ui/Button';
 import { getProfilePageSchema } from '@/lib/schema';
-import { BookOpen, Film } from 'lucide-react';
+import { BookOpen, Film, FileText, Award } from 'lucide-react';
 
 export default function Home() {
   const recentProjects = [...projectsData]
@@ -220,7 +220,19 @@ export default function Home() {
               </h3>
               <div className="mb-3 flex flex-wrap gap-2">
                 <Badge variant={pub.type === 'conference' ? 'primary' : 'default'}>
-                  {pub.type === 'conference' ? '📄 Conference' : '🏆 Award'}
+                  <span className="inline-flex items-center gap-1.5">
+                    {pub.type === 'conference' ? (
+                      <>
+                        <FileText className="h-3.5 w-3.5" />
+                        Conference
+                      </>
+                    ) : (
+                      <>
+                        <Award className="h-3.5 w-3.5" />
+                        Award
+                      </>
+                    )}
+                  </span>
                 </Badge>
                 <Badge>{pub.organization}</Badge>
                 {pub.venue && <Badge>{pub.venue}</Badge>}

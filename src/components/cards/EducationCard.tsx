@@ -1,4 +1,5 @@
 import { Education } from '@/types';
+import { Award, GraduationCap, TrendingUp } from 'lucide-react';
 
 interface EducationCardProps {
   education: Education;
@@ -40,14 +41,14 @@ export default function EducationCard({ education }: EducationCardProps) {
           </p>
           <ul className="space-y-2 text-xs text-muted md:text-sm">
             {education.achievements.map((achievement, idx) => {
-              const icon = achievement.toLowerCase().includes('rank') || achievement.toLowerCase().includes('medal')
-                ? '🏆'
+              const IconComponent = achievement.toLowerCase().includes('rank') || achievement.toLowerCase().includes('medal')
+                ? Award
                 : achievement.toLowerCase().includes('gate') || achievement.toLowerCase().includes('scholarship')
-                ? '🎓'
-                : '📊';
+                ? GraduationCap
+                : TrendingUp;
               return (
                 <li key={idx} className="flex items-start gap-2">
-                  <span className="text-base">{icon}</span>
+                  <IconComponent className="h-4 w-4 flex-shrink-0 text-primary" />
                   <span>{achievement}</span>
                 </li>
               );
