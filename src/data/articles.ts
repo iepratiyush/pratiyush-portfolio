@@ -27,7 +27,7 @@ export const articlesData: Article[] = [
   },
   {
     id: '4',
-    title: '12 Qualities of a Highly Effective Software Engineer',
+    title: '12 Qualities That Take a Software Engineer to Staff Engineer',
     description: 'Identifies twelve practical qualities that make software engineers effective beyond just writing code.',
     publishedDate: '2025-12-20',
     url: 'https://medium.com/p/7b91ac2285ff',
