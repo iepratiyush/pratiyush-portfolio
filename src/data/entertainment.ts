@@ -432,6 +432,16 @@ export const entertainmentData: Entertainment[] = [
     rating: 8.3,
   },
   {
+    id: '83',
+    title: 'Decision to Leave',
+    type: 'movie',
+    genre: 'Crime/Drama/Mystery',
+    description: 'A detective investigating a man\'s death in the mountains meets the dead man\'s mysterious wife in the course of his dogged sleuthing.',
+    year: 2022,
+    url: 'https://www.imdb.com/title/tt12477480/',
+    rating: 7.3,
+  },
+  {
     id: '44',
     title: 'Dune',
     type: 'movie',
@@ -570,6 +580,16 @@ export const entertainmentData: Entertainment[] = [
     year: 2010,
     url: 'https://www.imdb.com/title/tt1375666/',
     rating: 8.8,
+  },
+  {
+    id: '84',
+    title: 'No Other Choice',
+    type: 'movie',
+    genre: 'Drama/Thriller',
+    description: 'A French thriller about difficult moral choices and consequences.',
+    year: 2011,
+    url: 'https://www.imdb.com/title/tt1727300/',
+    rating: 6.2,
   },
   {
     id: '58',
