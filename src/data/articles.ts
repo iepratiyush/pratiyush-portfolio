@@ -3,30 +3,38 @@ import { Article } from '@/types';
 export const articlesData: Article[] = [
   {
     id: '1',
+    title: 'DNS as a Distributed System',
+    description: 'Reframes DNS from a simple name-to-IP lookup into what it actually is: a globally distributed, hierarchical, cache-first system that makes explicit trade-offs between consistency, availability, and performance. Explains why these design choices lead to real-world outages, security incidents, and surprising failure modes, and why DNS must be reasoned about like any other large-scale distributed system.',
+    publishedDate: '2025-01-10',
+    url: 'https://medium.com/@pratiyush/dns-as-a-distributed-system-5eb385642191',
+    tags: ['DNS', 'Distributed Systems', 'Internet', 'System Design Interview', 'Software Engineering'],
+  },
+  {
+    id: '2',
     title: 'Writing as Infrastructure',
     description: 'Argues that writing is a scaling primitive for engineering teams: while code scales systems, writing scales intent, decisions, and long-term clarity. Explains why writing is often deprioritised and how the real cost shows up later in misalignment, rework, and slow execution.',
     publishedDate: '2025-01-08',
     url: 'https://medium.com/@pratiyush/code-scales-systems-writing-scales-intent-d715ceaeac09',
     tags: ['Software Engineering', 'Writing', 'LLM', 'RAGs', 'Careers'],
-  }, 
+  },
   {
-    id: '2',
+    id: '3',
     title: 'Latency and Response Time Are Not the Same',
     description: 'Clarifies the critical distinction between latency and response time in distributed systems. Shows how conflating the two leads to optimising the wrong layer, and explains where infrastructure choices end and application-level performance begins.',
     publishedDate: '2025-01-06',
     url: 'https://medium.com/@pratiyush/latency-and-response-time-are-not-the-same-05eb7e294667',
     tags: ['System Design Interview', 'Distributed Systems', 'Software Development', 'Web Development', 'Backend'],
-  },    
+  },
   {
-    id: '3',
-    title: 'Learning How to Unlearn',
+    id: '4',
+    title: 'Learning How to Unlearn'
     description: 'Explains why unlearning outdated assumptions and mental models is becoming more important than continuously acquiring new skills.',
     publishedDate: '2025-12-30',
     url: 'https://medium.com/p/63b92e186d7f',
     tags: ['Learning', 'Software Development', 'Career Advice', 'Habits', 'Engineering'],
   },
   {
-    id: '4',
+    id: '5',
     title: 'Run Transformer Models in Your Browser using Transformer.js',
     description: 'Shows how to run transformer models entirely in the browser using transformers.js, enabling client-side and privacy-friendly inference.',
     publishedDate: '2025-12-26',
@@ -34,7 +42,7 @@ export const articlesData: Article[] = [
     tags: ['Genai', 'Artificial Intelligence', 'Web Development', 'Privacy', 'JavaScript'],
   },
   {
-    id: '5',
+    id: '6',
     title: 'Random Is Not Same as Unpredictable in Python',
     description: 'Clarifies the difference between randomness and unpredictability in Python and why misunderstanding it can cause security issues.',
     publishedDate: '2025-12-23',
@@ -42,7 +50,7 @@ export const articlesData: Article[] = [
     tags: ['Python', 'Security', 'Software Development', 'Interview', 'System Design Interview'],
   },
   {
-    id: '6',
+    id: '7',
     title: '12 Qualities That Take a Software Engineer to Staff Engineer',
     description: 'Identifies twelve practical qualities that make software engineers effective beyond just writing code.',
     publishedDate: '2025-12-20',
@@ -50,7 +58,7 @@ export const articlesData: Article[] = [
     tags: ['Software Engineering', 'Personal Growth', 'Leadership', 'Career Development', 'Systems Thinking'],
   },
   {
-    id: '7',
+    id: '8',
     title: "You Should Switch to gRPC if You're Still Using REST for Microservices",
     description: 'Explains when gRPC is a better alternative to REST for microservices and the trade-offs involved.',
     publishedDate: '2025-11-25',
@@ -58,7 +66,7 @@ export const articlesData: Article[] = [
     tags: ['Grpc', 'Fastapi', 'Software Development', 'Microservices', 'System Design Interview'],
   },
   {
-    id: '8',
+    id: '9',
     title: "Andrej Karpathy Grounds AI Hype in Reality in His New Podcast: Key Takeaways",
     description: "Summarizes key insights from Andrej Karpathy's podcast, focusing on realistic expectations from modern AI systems.",
     publishedDate: '2025-11-09',
@@ -66,7 +74,7 @@ export const articlesData: Article[] = [
     tags: ['Artificial Intelligence', 'LLM', 'Vibe Coding', 'AI Agent', 'NLP'],
   },
   {
-    id: '9',
+    id: '10',
     title: "Andrej Karpathy Says Expert Programmers Shouldn't Reject LLMs",
     description: 'Discusses why experienced programmers should adapt to LLMs instead of avoiding them completely.',
     publishedDate: '2025-10-30',
@@ -74,7 +82,7 @@ export const articlesData: Article[] = [
     tags: ['Vibe Coding', 'LLM', 'Genai', 'Software Development', 'Coding'],
   },
   {
-    id: '10',
+    id: '11',
     title: "LLM? Agent? RAG? MCP? If You're Confused Too, This GuideWill Help",
     description: 'Provides a high-level explanation of common AI terms like LLMs, agents, RAG, and MCP in simple language.',
     publishedDate: '2025-07-06',
@@ -82,7 +90,7 @@ export const articlesData: Article[] = [
     tags: ['AI', 'LLM', 'Agentic Ai', 'Agentic Workflow', 'Software Development'],
   },
   {
-    id: '11',
+    id: '12',
     title: '12 Qualities of a Highly Effective Architect',
     description: 'Explores the core qualities that make software architects effective at scale beyond technical design decisions.',
     publishedDate: '2025-06-22',
@@ -90,7 +98,7 @@ export const articlesData: Article[] = [
     tags: ['Software Architecture', 'Software Development', 'Software Design', 'Leadership', 'Strategy'],
   },
   {
-    id: '12',
+    id: '13',
     title: "Ranking Cricket's Top 10 Players in Every Discipline with Pandas and Kaggle Data",
     description: 'Uses Python and Pandas to analyze cricket data and rank top players across different performance dimensions.',
     publishedDate: '2025-06-21',
@@ -98,7 +106,7 @@ export const articlesData: Article[] = [
     tags: ['Pandas', 'Data Science', 'Machine Learning', 'Cricket', 'Python'],
   },
   {
-    id: '13',
+    id: '14',
     title: 'Build a Smart Automated Event Reminder System with Python in Under 30 Minutes',
     description: 'Shows how to build a lightweight automated reminder system using Python with minimal infrastructure and setup.',
     publishedDate: '2025-03-31',
@@ -106,7 +114,7 @@ export const articlesData: Article[] = [
     tags: ['Python', 'Flask', 'Sqlite', 'Pythonanywhere', 'Software Development'],
   },
   {
-    id: '14',
+    id: '15',
     title: '5 Data Normalization Techniques You Should Know for Machine Learning',
     description: 'Explains common data normalization techniques and when each should be applied in machine learning workflows.',
     publishedDate: '2025-02-18',
@@ -114,7 +122,7 @@ export const articlesData: Article[] = [
     tags: ['Machine Learning', 'Data Normalization', 'Python', 'Data Science', 'Data Visualization'],
   },
   {
-    id: '15',
+    id: '16',
     title: '4 Important Behavioral Design Patterns everyone should be aware of',
     description: 'Introduces key behavioral design patterns and explains how they govern object interaction and responsibility.',
     publishedDate: '2025-01-12',
@@ -122,7 +130,7 @@ export const articlesData: Article[] = [
     tags: ['Design Patterns', 'Behavioral Design Pattern', 'Java'],
   },
   {
-    id: '16',
+    id: '17',
     title: '4 Important Structural Design Patterns everyone should be aware of',
     description: 'Covers commonly used structural design patterns and how they help organize complex systems.',
     publishedDate: '2025-01-01',
@@ -130,7 +138,7 @@ export const articlesData: Article[] = [
     tags: ['Design Patterns', 'Structural Design Pattern', 'Java'],
   },
   {
-    id: '17',
+    id: '18',
     title: '3 Important Creational Design Patterns everyone should be aware of',
     description: 'Explains core creational design patterns and how they simplify object creation and dependency management.',
     publishedDate: '2024-12-31',
@@ -138,7 +146,7 @@ export const articlesData: Article[] = [
     tags: ['Design Patterns', 'Creational Design Pattern', 'Java'],
   },
   {
-    id: '18',
+    id: '19',
     title: 'Understanding HTTPS and How Website Encryption Works',
     description: 'Breaks down how HTTPS works internally and why encryption is critical for secure web communication.',
     publishedDate: '2024-10-15',
@@ -146,7 +154,7 @@ export const articlesData: Article[] = [
     tags: ['Https', 'Tls', 'Encryption', 'Software Development', 'Web Security'],
   },
   {
-    id: '19',
+    id: '20',
     title: 'One Important Lifehack to Make or Break Your Habits',
     description: 'Explores a simple but powerful habit strategy that significantly impacts long-term behavior change.',
     publishedDate: '2024-08-31',
@@ -154,7 +162,7 @@ export const articlesData: Article[] = [
     tags: ['Habits', 'Lifehacks', 'Atomic Habit', 'Addiction Recovery'],
   },
   {
-    id: '20',
+    id: '21',
     title: 'Dockerizing Spring Boot Application End-to-End with DB and Cache',
     description: 'Walks through containerizing a Spring Boot application along with database and cache integration.',
     publishedDate: '2024-08-17',
@@ -162,7 +170,7 @@ export const articlesData: Article[] = [
     tags: ['Spring Boot', 'Postgresql', 'Redis', 'Docker', 'Docker Compose'],
   },
   {
-    id: '21',
+    id: '22',
     title: 'Understanding Tokenization and Embedding in Generative AI',
     description: 'Explains tokenization and embeddings, two foundational concepts behind modern generative AI systems.',
     publishedDate: '2024-06-08',
@@ -170,7 +178,7 @@ export const articlesData: Article[] = [
     tags: ['Genai', 'Tokenization', 'Embedding', 'AI', 'OpenAI'],
   },
   {
-    id: '22',
+    id: '23',
     title: 'Creating a News Notification System with Kafka and Spring Boot',
     description: 'Demonstrates how to build a real-time notification system using Kafka and Spring Boot.',
     publishedDate: '2024-04-26',
@@ -178,7 +186,7 @@ export const articlesData: Article[] = [
     tags: ['Kafka', 'Spring Boot', 'Java', 'Backend', 'Software Development'],
   },
   {
-    id: '23',
+    id: '24',
     title: '10 Data Engineering Terms Everyone Should Be Aware Of',
     description: 'Provides a high-level overview of essential data engineering concepts and terminology.',
     publishedDate: '2024-04-06',
@@ -186,7 +194,7 @@ export const articlesData: Article[] = [
     tags: ['Data Ecosystems', 'Data Storage', 'Data Pipeline', 'Data Visualization', 'Data Analytics'],
   },
   {
-    id: '24',
+    id: '25',
     title: '2 Essential Techniques That Will Help You Become a Productive Developer',
     description: 'Discusses two practical techniques that significantly improve developer productivity and learning efficiency.',
     publishedDate: '2024-03-27',
@@ -194,7 +202,7 @@ export const articlesData: Article[] = [
     tags: ['Prompt Engineering', 'Googling', 'Genai', 'Software Development'],
   },
   {
-    id: '25',
+    id: '26',
     title: 'Dockerizing Spring Boot Application by Adhering to 8 Best Practices',
     description: 'Explains best practices for containerizing Spring Boot applications using Docker.',
     publishedDate: '2024-03-11',
@@ -202,7 +210,7 @@ export const articlesData: Article[] = [
     tags: ['Docker', 'Spring Boot', 'Best Practices', 'Software Development'],
   },
   {
-    id: '26',
+    id: '27',
     title: 'Understanding Backtracking Algorithm with the Famous Chess Puzzle',
     description: 'Uses a classic chess puzzle to explain the backtracking algorithm and its problem-solving approach.',
     publishedDate: '2024-03-03',
@@ -210,7 +218,7 @@ export const articlesData: Article[] = [
     tags: ['Backtracking', 'Java', 'Chess', 'Software Development', 'Tech Interview'],
   },
   {
-    id: '27',
+    id: '28',
     title: 'Efficient Large-Scale Data Streaming Using Spring Boot and JavaScript Guide',
     description: 'Shows how to stream large datasets efficiently using Spring Boot and JavaScript.',
     publishedDate: '2024-02-19',
@@ -218,7 +226,7 @@ export const articlesData: Article[] = [
     tags: ['Rest Api', 'Spring Boot', 'JavaScript', 'Data Intensive System', 'Software Development'],
   },
   {
-    id: '28',
+    id: '29',
     title: 'Effective Technique to Improve your Angular Application Performance',
     description: 'Explains a practical technique to improve Angular application performance and prevent memory leaks.',
     publishedDate: '2024-02-11',
@@ -226,7 +234,7 @@ export const articlesData: Article[] = [
     tags: ['Angular', 'Observables', 'Memory Leak', 'Frontend Development', 'Software Development'],
   },
   {
-    id: '29',
+    id: '30',
     title: 'Effective Management of Node.js and Java Versions on Windows',
     description: 'Describes strategies for managing multiple Node.js and Java versions on Windows systems.',
     publishedDate: '2024-02-03',
@@ -234,7 +242,7 @@ export const articlesData: Article[] = [
     tags: ['Java', 'Nodejs', 'Windows', 'Software Development', 'Productivity'],
   },
   {
-    id: '30',
+    id: '31',
     title: 'Understanding Spring AOP by Creating Annotation for Logging Requests and Responses',
     description: 'Introduces Spring AOP by building a custom annotation for logging requests and responses.',
     publishedDate: '2024-01-24',
@@ -242,7 +250,7 @@ export const articlesData: Article[] = [
     tags: ['Aspect Patterns', 'Spring Boot', 'Design Patterns', 'Software Development', 'Java'],
   },
   {
-    id: '31',
+    id: '32',
     title: 'Understanding Tries by Building an Auto-complete System',
     description: 'Explains the trie data structure by implementing a simple auto-complete system.',
     publishedDate: '2024-01-21',
@@ -250,7 +258,7 @@ export const articlesData: Article[] = [
     tags: ['Trie Data Structure', 'Autocomplete', 'Data Structure Algorithm', 'Interview', 'Software Development'],
   },
   {
-    id: '32',
+    id: '33',
     title: 'Understanding Dynamic Programming with Levenshtein Distance',
     description: 'Explains dynamic programming concepts using Levenshtein distance as a practical example.',
     publishedDate: '2024-01-14',
@@ -258,7 +266,7 @@ export const articlesData: Article[] = [
     tags: ['Dynamic Programming', 'Levenshtein Distance', 'Data Structure Algorithm', 'Interview', 'Sofware Development'],
   },
   {
-    id: '33',
+    id: '34',
     title: '7 Important Things About Redis That Everyone Should Be Aware Of',
     description: 'Covers lesser-known but important Redis concepts beyond basic caching use cases.',
     publishedDate: '2024-01-06',
@@ -266,7 +274,7 @@ export const articlesData: Article[] = [
     tags: ['Redis', 'Software Development', 'System Design Concepts', 'Distributed Systems', 'System Design Interview'],
   },
   {
-    id: '34',
+    id: '35',
     title: 'Understanding Patterns That Can Help You Solve All BFS Problems',
     description: 'Explains common breadth-first search patterns that can be reused to solve a wide range of BFS problems.',
     publishedDate: '2023-12-27',
@@ -274,7 +282,7 @@ export const articlesData: Article[] = [
     tags: ['Data Structure Algorithm', 'Binary Tree Traversal', 'Breadth First Search', 'Interview', 'Software Development'],
   },
   {
-    id: '35',
+    id: '36',
     title: 'Setting Up Basic Authentication for Spring Boot',
     description: 'Shows how to implement basic authentication in a Spring Boot application from scratch.',
     publishedDate: '2023-10-05',
@@ -282,7 +290,7 @@ export const articlesData: Article[] = [
     tags: ['Spring Boot', 'Spring Security', 'Backend Development', 'Java', 'Full Stack Developer'],
   },
   {
-    id: '36',
+    id: '37',
     title: 'Getting a Map Directly from a Query Using MyBatis in Spring Boot',
     description: 'Demonstrates how to return query results directly as a map using MyBatis in Spring Boot.',
     publishedDate: '2022-12-23',
@@ -290,7 +298,7 @@ export const articlesData: Article[] = [
     tags: ['Spring Boot', 'Mybatis', 'Java', 'Backend', 'Sql'],
   },
   {
-    id: '37',
+    id: '38',
     title: 'Custom Sorting and Filtering for Angular Material Table',
     description: 'Explains how to implement custom sorting and filtering logic for Angular Material tables.',
     publishedDate: '2022-09-12',
@@ -298,7 +306,7 @@ export const articlesData: Article[] = [
     tags: ['Angular', 'Frontend', 'Software Development', 'Material Design', 'UI'],
   },
   {
-    id: '38',
+    id: '39',
     title: 'Improving Service Performance by Utilizing Caching and Parallelization in Spring Boot',
     description: 'Shows how caching and parallel execution can significantly improve service performance in Spring Boot.',
     publishedDate: '2022-07-19',
@@ -306,7 +314,7 @@ export const articlesData: Article[] = [
     tags: ['Spring Boot', 'Caching', 'Async', 'Performance Improvement', 'Software Development'],
   },
   {
-    id: '39',
+    id: '40',
     title: 'Sorting an Array of Objects by Multiple Fields in Java and JavaScript',
     description: 'Demonstrates techniques to sort arrays of objects by multiple fields in Java and JavaScript.',
     publishedDate: '2022-07-07',
@@ -314,7 +322,7 @@ export const articlesData: Article[] = [
     tags: ['Sorting Algorithms', 'Java', 'JavaScript', 'Software Development', 'Data Structures'],
   },
   {
-    id: '40',
+    id: '41',
     title: "You Should Be Aware of This if You Are Still Using the Stack Class in Java",
     description: "Explains why Java's legacy Stack class should be avoided and what to use instead.",
     publishedDate: '2022-06-25',
@@ -322,7 +330,7 @@ export const articlesData: Article[] = [
     tags: ['Data Structures', 'Stack', 'Deque', 'Software Development', 'Interview Questions'],
   },
   {
-    id: '41',
+    id: '42',
     title: "Understanding Kahn's Algorithm for Topological Sorting",
     description: "Explains Kahn's algorithm for topological sorting with clear intuition and examples.",
     publishedDate: '2022-05-17',
@@ -330,7 +338,7 @@ export const articlesData: Article[] = [
     tags: ['Data Structure Algorithm', 'Interview Questions', 'Software Development', 'Graph Theory', 'Java'],
   },
   {
-    id: '42',
+    id: '43',
     title: 'Implementing Rate limiter using Redis cache in Spring Boot',
     description: 'Shows how to implement API rate limiting using Redis in a Spring Boot application.',
     publishedDate: '2022-04-22',
@@ -338,7 +346,7 @@ export const articlesData: Article[] = [
     tags: ['System Design Interview', 'Rate Limiting', 'Spring Boot', 'Java', 'Software Development'],
   },
   {
-    id: '43',
+    id: '44',
     title: 'Tricky JavaScript Interview Question That Most Folks Fail to Answer',
     description: 'Breaks down a tricky JavaScript interview question to explain closures and the event loop.',
     publishedDate: '2022-04-20',
@@ -346,7 +354,7 @@ export const articlesData: Article[] = [
     tags: ['JavaScript', 'Interview', 'Interview Questions', 'Closure', 'Event Loop'],
   },
   {
-    id: '44',
+    id: '45',
     title: 'You Should Be Aware of This if You Are Using Collectors.toMap in Java',
     description: 'Explains common pitfalls when using Collectors.toMap in Java streams and how to avoid them.',
     publishedDate: '2022-03-25',
@@ -354,7 +362,7 @@ export const articlesData: Article[] = [
     tags: ['Java', 'Collections Framework', 'Software Development', 'Programming', 'Interview Questions'],
   },
   {
-    id: '45',
+    id: '46',
     title: "Understanding Cycle Detection Using Floyd's Algorithm",
     description: "Explains Floyd's cycle detection algorithm with intuition and practical examples.",
     publishedDate: '2022-03-12',
@@ -362,7 +370,7 @@ export const articlesData: Article[] = [
     tags: ['Data Structure Algorithm', 'Two Pointers', 'Linked Lists', 'Java', 'Software Development'],
   },
   {
-    id: '46',
+    id: '47',
     title: 'Understanding Compile-Time and Runtime Polymorphism',
     description: 'Clarifies the difference between compile-time and runtime polymorphism in object-oriented programming.',
     publishedDate: '2022-03-11',
@@ -370,7 +378,7 @@ export const articlesData: Article[] = [
     tags: ['Polymorphism', 'Object Oriented', 'Java', 'Programming', 'Software Development'],
   },
   {
-    id: '47',
+    id: '48',
     title: 'Proxy Design Pattern in Spring',
     description: 'Explains the proxy design pattern and how Spring uses proxies internally.',
     publishedDate: '2022-02-28',
@@ -378,7 +386,7 @@ export const articlesData: Article[] = [
     tags: ['Spring', 'Proxy Pattern', 'Spring Aop', 'Java', 'Software Development'],
   },
   {
-    id: '48',
+    id: '49',
     title: "Implementing Reverse Proxy Using Netflix's Zuul in Spring Boot",
     description: 'Shows how to implement a reverse proxy using Netflix Zuul in Spring Boot.',
     publishedDate: '2022-02-21',
@@ -386,7 +394,7 @@ export const articlesData: Article[] = [
     tags: ['Netflix', 'Spring Boot', 'Reverse Proxy', 'Java', 'Software Development'],
   },
   {
-    id: '49',
+    id: '50',
     title: 'Serialization and Deserialization in Java',
     description: 'Explains how serialization and deserialization work in Java and when they are used.',
     publishedDate: '2022-02-14',
@@ -394,7 +402,7 @@ export const articlesData: Article[] = [
     tags: ['Data Structures', 'Java', 'Spring Boot', 'Software Development', 'Binary Tree'],
   },
   {
-    id: '50',
+    id: '51',
     title: '2 Ways to Handle Stale Cached Response in Redis',
     description: 'Discusses strategies to handle stale cache data when using Redis.',
     publishedDate: '2022-02-05',
@@ -402,7 +410,7 @@ export const articlesData: Article[] = [
     tags: ['Redis', 'Spring Boot', 'Backend Development', 'Software Development', 'Java'],
   },
   {
-    id: '51',
+    id: '52',
     title: 'Multilevel Redis Caching Strategy to Improve Performance',
     description: 'Explains a multi-level caching strategy using Redis to improve application performance.',
     publishedDate: '2022-01-26',
@@ -410,7 +418,7 @@ export const articlesData: Article[] = [
     tags: ['Redis', 'Caching', 'Spring Boot', 'Backend', 'Software Development'],
   },
   {
-    id: '52',
+    id: '53',
     title: '3 Important Annotations That Will Be Helpful in the Majority of Spring Boot Projects',
     description: 'Introduces commonly used annotations that simplify development in Spring Boot projects.',
     publishedDate: '2022-01-17',
@@ -418,7 +426,7 @@ export const articlesData: Article[] = [
     tags: ['Java', 'Spring Boot', 'Backend Development', 'Software Development', 'API'],
   },
   {
-    id: '53',
+    id: '54',
     title: 'How to Handle Constraint Violation Exception Using @ControllerAdvice in Spring Boot',
     description: 'Shows how to handle validation errors cleanly in Spring Boot using @ControllerAdvice.',
     publishedDate: '2022-01-11',
@@ -426,7 +434,7 @@ export const articlesData: Article[] = [
     tags: ['Spring Boot', 'Java', 'Backend', 'Validation', 'Software Development'],
   },
   {
-    id: '54',
+    id: '55',
     title: 'You Should Be Aware of This if You Are Using Arrays.asList in Java',
     description: 'Explains limitations of Arrays.asList in Java and common mistakes developers make.',
     publishedDate: '2022-01-06',
@@ -434,7 +442,7 @@ export const articlesData: Article[] = [
     tags: ['Java', 'Java8', 'Programming', 'Backend Development', 'Software Development'],
   },
   {
-    id: '55',
+    id: '56',
     title: 'Get All Message Properties Key-Value Pairs as JSON for Selected Locale in Spring Boot',
     description: 'Shows how to expose localized message properties as JSON in a Spring Boot application.',
     publishedDate: '2022-01-03',
@@ -442,7 +450,7 @@ export const articlesData: Article[] = [
     tags: ['Internationalization', 'Spring Boot', 'Java', 'Backend', 'Software Development'],
   },
   {
-    id: '56',
+    id: '57',
     title: "Jackson ObjectMapper for Parsing JSON in Spring Boot",
     description: "Explains how Jackson's ObjectMapper is used to parse and handle JSON in Spring Boot.",
     publishedDate: '2022-01-03',
@@ -450,7 +458,7 @@ export const articlesData: Article[] = [
     tags: ['Json', 'Spring Boot', 'Backend', 'Java', 'Software Development'],
   },
   {
-    id: '57',
+    id: '58',
     title: "Wrong Git Commit ? Don't Worry — This Command Will Help",
     description: 'Explains how to fix common Git commit mistakes using a simple command.',
     publishedDate: '2021-12-28',
@@ -458,7 +466,7 @@ export const articlesData: Article[] = [
     tags: ['Git', 'Software Development', 'Programming', 'Data Science', 'Github'],
   },
   {
-    id: '58',
+    id: '59',
     title: 'Improve the Performance of Angular Material Select and Autocomplete to Handle 100k+ Data',
     description: 'Shows techniques to improve Angular Material select and autocomplete performance with large datasets.',
     publishedDate: '2021-12-28',
@@ -466,7 +474,7 @@ export const articlesData: Article[] = [
     tags: ['Angular', 'Front End Development', 'Angular Material', 'Angular2', 'Software Development'],
   },
   {
-    id: '59',
+    id: '60',
     title: 'One Common Mistake to Avoid When Using @Async and @Cacheable in Spring Boot',
     description: 'Explains a common mistake when combining async execution and caching in Spring Boot.',
     publishedDate: '2021-12-28',
@@ -474,7 +482,7 @@ export const articlesData: Article[] = [
     tags: ['Spring', 'Spring Boot', 'Java', 'Java8', 'Backend Development'],
   },
   {
-    id: '60',
+    id: '61',
     title: 'Difference Between Scalar and Aggregate Functions in Oracle SQL',
     description: 'Explains the difference between scalar and aggregate functions in Oracle SQL with examples.',
     publishedDate: '2021-12-27',
@@ -482,7 +490,7 @@ export const articlesData: Article[] = [
     tags: ['Oracle', 'Oracle Database', 'Sql', 'Database', 'Backend Development'],
   },
   {
-    id: '61',
+    id: '62',
     title: 'Convert List to Map Using Stream and Collectors in Java',
     description: 'Shows how to convert a list into a map using Java streams and collectors.',
     publishedDate: '2021-12-27',
@@ -490,7 +498,7 @@ export const articlesData: Article[] = [
     tags: ['Java', 'Spring Boot', 'Programming', 'Java8', 'Backend Development'],
   },
   {
-    id: '62',
+    id: '63',
     title: '4 Essential VS Code Extensions for Angular Developer',
     description: 'Lists essential VS Code extensions that improve productivity for Angular developers.',
     publishedDate: '2020-04-08',
@@ -498,7 +506,7 @@ export const articlesData: Article[] = [
     tags: ['Angular', 'Vscode', 'Javascript Frameworks', 'Extension', 'Best Practices'],
   },
   {
-    id: '63',
+    id: '64',
     title: 'Angular Development With NgRX',
     description: 'Explains state management in Angular applications using NgRx with practical examples.',
     publishedDate: '2020-03-27',
