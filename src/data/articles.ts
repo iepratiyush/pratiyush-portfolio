@@ -27,7 +27,7 @@ export const articlesData: Article[] = [
   },
   {
     id: '4',
-    title: 'Learning How to Unlearn'
+    title: 'Learning How to Unlearn',
     description: 'Explains why unlearning outdated assumptions and mental models is becoming more important than continuously acquiring new skills.',
     publishedDate: '2025-12-30',
     url: 'https://medium.com/p/63b92e186d7f',
