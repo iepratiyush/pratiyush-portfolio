@@ -3,7 +3,7 @@ import { Skill } from '@/types';
 export const skillsData: Skill[] = [
   {
     category: 'AI/ML & Data',
-    items: ['Supervised Learning', 'Unsupervised Learning', 'Gen AI', 'Agentic AI', 'LLMs', 'Transformer Models', 'RAG', 'Prompt Engineering', 'Recommendation Systems', 'MLOps', 'Feature Engineering', 'ETL', 'Data Modeling'],
+    items: ['Supervised Learning', 'Unsupervised Learning', 'Gen AI', 'Agentic AI', 'LLMs', 'Transformer Models', 'RAG', 'Prompt Engineering', 'Recommendation Systems', 'MLOps', 'Feature Engineering', 'ETL', 'Data Modeling', 'Agentic Coding - Claude Code'],
     currentFocus: true,
   },
   {
