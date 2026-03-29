@@ -529,4 +529,12 @@ export const articlesData: Article[] = [
     url: 'https://medium.com/p/7accd101c75',
     tags: ['Angular', 'Ngrx', 'Redux', 'JavaScript', 'Front End Development'],
   },
+  {
+    id: '67',
+    title: 'Optimizing the Wrong Signal',
+    description: 'Explains how incomplete data leads to flawed decisions, using a WWII aircraft example to highlight why missing data matters more than visible patterns.',
+    publishedDate: '2026-03-29',
+    url: 'https://medium.com/@pratiyush/optimizing-the-wrong-signal-5922f332480e',
+    tags: ['Machine Learning', 'Business Strategy', 'Growth', 'Product Development', 'Data Analysis']
+  }
 ];
