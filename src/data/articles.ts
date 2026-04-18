@@ -536,5 +536,13 @@ export const articlesData: Article[] = [
     publishedDate: '2026-03-29',
     url: 'https://medium.com/@pratiyush/optimizing-the-wrong-signal-5922f332480e',
     tags: ['Machine Learning', 'Business Strategy', 'Growth', 'Product Development', 'Data Analysis']
+  },
+  {
+    id: '68',
+    title: 'Repetition, Busyness, and the Blur of Time',
+    description: 'Explores why busy days often feel indistinguishable in hindsight, and how repetition compresses memory while meaningful transitions make time feel fuller and more memorable.',
+    publishedDate: '2026-04-18',
+    url: 'https://pratiyush.medium.com/repetition-busyness-and-the-blur-of-time-3dfe0a31a329',
+    tags: ['Time Management', 'Work', 'Productivity', 'Life']
   }
 ];
