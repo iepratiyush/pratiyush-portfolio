@@ -544,5 +544,21 @@ export const articlesData: Article[] = [
     publishedDate: '2026-04-18',
     url: 'https://pratiyush.medium.com/repetition-busyness-and-the-blur-of-time-3dfe0a31a329',
     tags: ['Time Management', 'Work', 'Productivity', 'Life']
+  }, 
+  {
+    id: '69',
+    title: 'Understanding the Twelve-Factor App in Today’s World',
+    description: 'Explains how the Twelve-Factor App principles fit into modern software development, with practical examples from containers, Kubernetes, CI/CD, observability, and production applications.',
+    publishedDate: '2026-07-28',
+    url: 'https://medium.com/dev-genius/understanding-the-twelve-factor-app-in-todays-world-62deba969cae',
+    tags: ['Software Architecture', 'Cloud Native', 'Twelve-Factor App', 'Kubernetes', 'Software Engineering']
+  },
+  {
+    id: '70',
+    title: 'What Does “Understand the System” Actually Mean?',
+    description: 'Explores what it really means to understand a system, why understanding its parts is not enough, how different systems require different approaches, and how feedback, intervention, and system behavior shape the way we solve problems.',
+    publishedDate: '2026-08-16',
+    url: 'https://pratiyush.medium.com/what-does-understand-the-system-actually-mean-7fa9059f22fe?postPublishedType=repub',
+    tags: ['Systems Thinking', 'Software Architecture', 'Engineering', 'Leadership', 'Problem Solving']
   }
 ];
