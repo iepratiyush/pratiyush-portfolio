@@ -560,5 +560,22 @@ export const articlesData: Article[] = [
     publishedDate: '2026-08-16',
     url: 'https://pratiyush.medium.com/what-does-understand-the-system-actually-mean-7fa9059f22fe?postPublishedType=repub',
     tags: ['Systems Thinking', 'Software Architecture', 'Engineering', 'Leadership', 'Problem Solving']
+  },
+  {
+    id: '71',
+    title: 'Why Comparing LLM Prices Per Token Is Misleading',
+    description: 'Explores why different LLM tokenizers produce different token counts for the same text, how languages, emojis, code, and structured data affect token consumption, and why the cheapest model per million tokens is not necessarily the cheapest for an application. Covers tokenizer vocabulary, prompt caching, reasoning tokens, and multimodal usage to understand the factors that influence LLM costs.',
+    publishedDate: '2026-10-20',
+    url: 'https://blog.devgenius.io/comparing-llm-costs-why-tokenizers-and-use-cases-matter-18ad00b63065?sharedUserId=pratiyush',
+    tags: ['LLM', 'Tokenization', 'GenAI', 'AI Engineering', 'LLM Costs', 'RAG']
+  },
+  {
+    id: '71',
+    title: 'Vector Search at Scale: Exact Search, HNSW, and IVFFlat',
+    description: 'Explores how vector search works, how HNSW and IVFFlat differ in their search strategies, and how exact search compares with approximate nearest-neighbor indexing. Uses Python, PostgreSQL, and pgvector to benchmark latency and recall and understand the trade-offs between search speed and retrieval quality.',
+    publishedDate: '2026-10-24',
+    url: 'https://pratiyush.medium.com/vector-search-at-scale-exact-search-hnsw-and-ivfflat-600f9463b9f2?sharedUserId=pratiyush',
+    tags: ['Vector Search', 'PostgreSQL', 'pgvector', 'AI', 'RAG', 'Machine Learning']
   }
+
 ];
