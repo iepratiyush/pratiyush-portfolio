@@ -570,12 +570,20 @@ export const articlesData: Article[] = [
     tags: ['LLM', 'Tokenization', 'GenAI', 'AI Engineering', 'LLM Costs', 'RAG']
   },
   {
-    id: '71',
+    id: '72',
     title: 'Vector Search at Scale: Exact Search, HNSW, and IVFFlat',
     description: 'Explores how vector search works, how HNSW and IVFFlat differ in their search strategies, and how exact search compares with approximate nearest-neighbor indexing. Uses Python, PostgreSQL, and pgvector to benchmark latency and recall and understand the trade-offs between search speed and retrieval quality.',
     publishedDate: '2026-10-24',
     url: 'https://pratiyush.medium.com/vector-search-at-scale-exact-search-hnsw-and-ivfflat-600f9463b9f2?sharedUserId=pratiyush',
     tags: ['Vector Search', 'PostgreSQL', 'pgvector', 'AI', 'RAG', 'Machine Learning']
+  },
+  {
+    id: '73',
+    title: 'From Dual-Channel to AI Omnichannel Experiences',
+    description: 'Explores how AI is expanding digital experiences beyond websites and APIs through AI answer engines, chatbots, AI commerce, and agentic interfaces. Examines the role of AEO/GEO, MCP, and A2A, and why businesses should extend their digital capabilities without neglecting their existing foundations in data, APIs, and web experiences.',
+    publishedDate: '2026-10-25',
+    url: 'https://pratiyush.medium.com/from-dual-channel-to-ai-omnichannel-experiences-7a4758330502?sharedUserId=pratiyush',
+    tags: ['AI', 'Digital Marketing', 'Software Architecture', 'AEO', 'GEO', 'MCP', 'A2A', 'Omnichannel']
   }
 
 ];
