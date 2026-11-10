@@ -90,4 +90,23 @@ export const projectsData: Project[] = [
     skills: ['System Architecture', 'Front-End Development', 'Back-End Web Development', 'Angular'],
     link: 'https://www.ti.com/design-resources/design-tools-simulation/filter-designer.html',
   },
+  {
+    id: '10',
+    title: "Pratyush's Atlas - Personal Travel Map",
+    role: 'Designer / Full-stack Developer',
+    duration: 'Nov 2026 - Nov 2026',
+    organization: 'Personal Project',
+    description: "Interactive world map to track visited places with photo galleries, search, and dark mode — built with React, Leaflet, and Cloudinary.",
+    skills: ['React', 'TypeScript', 'Leaflet', 'Tailwind CSS', 'Vite', 'Cloudinary'],
+    link: 'https://pratiyush-atlas.vercel.app/',
+  },
+  { id: '11', 
+    title: 'Next Gen Design Tools – System Studio and Power Tree Designer', 
+    role: 'Solution Architect / Product Lead', 
+    duration: 'May 2026 - Present', 
+    organization: 'Texas Instruments', 
+    description: 'Next-generation system-level design suite for TI.com featuring System Studio and Power Tree Designer, enabling visual architecture, intelligent device recommendations, multi-rail power design, and complete BOM generation.', 
+    skills: ['System Architecture', 'Product Leadership', 'Cloud Infrastructure', 'Agentic AI',  'Strategic Planning', 'Software Development'], 
+    link: 'https://www.ti.com', 
+  }
 ];
